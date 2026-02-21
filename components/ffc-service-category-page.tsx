@@ -505,7 +505,7 @@ export default function FFCServiceCategoryPage({ service }: ServiceCategoryPageP
                     <p className="text-sm text-gray-600 mb-3 line-clamp-2">{pkg.shortDescription}</p>
                     <div className="flex items-center justify-between">
                       <span className="text-rose-800 font-bold">{formatPrice(pkg.price)}</span>
-                      <span className="text-sm text-rose-800">View Details →</span>
+                      <span className="inline-flex items-center gap-1 px-2 py-1 text-xs font-semibold rounded bg-rose-800 text-white group-hover:bg-rose-900 transition-colors">View <ChevronRight className="h-3 w-3" /></span>
                     </div>
                   </CardContent>
                 </Card>

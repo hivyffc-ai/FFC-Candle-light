@@ -1,29 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
   <defs>
     <linearGradient id="candleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#F59E0B"/>
-      <stop offset="100%" style="stop-color:#B45309"/>
+      <stop offset="0%" style="stop-color:#881337"/>
+      <stop offset="100%" style="stop-color:#4C0519"/>
     </linearGradient>
-    <radialGradient id="glowGrad" cx="50%" cy="30%" r="50%">
-      <stop offset="0%" style="stop-color:#FEF3C7"/>
-      <stop offset="100%" style="stop-color:#F59E0B"/>
-    </radialGradient>
   </defs>
-  <!-- Background Circle -->
-  <circle cx="50" cy="50" r="48" fill="url(#candleGrad)"/>
+  <!-- Background -->
+  <rect width="32" height="32" rx="6" fill="url(#candleGrad)"/>
   <!-- Candle -->
-  <rect x="40" y="45" width="20" height="35" rx="2" fill="#FEF3C7"/>
-  <!-- Melted wax drips -->
-  <ellipse cx="42" cy="50" rx="3" ry="8" fill="#FDE68A"/>
-  <ellipse cx="58" cy="52" rx="2" ry="6" fill="#FDE68A"/>
+  <rect x="12" y="14" width="8" height="14" rx="1" fill="#FEF3C7"/>
+  <!-- Wax drips -->
+  <ellipse cx="13" cy="16" rx="1.5" ry="3" fill="#FDE68A"/>
+  <ellipse cx="19" cy="17" rx="1" ry="2.5" fill="#FDE68A"/>
   <!-- Wick -->
-  <rect x="48" y="35" width="4" height="12" rx="1" fill="#78350F"/>
+  <rect x="15" y="10" width="2" height="5" rx="0.5" fill="#78350F"/>
   <!-- Flame -->
-  <ellipse cx="50" cy="28" rx="8" ry="12" fill="#FCD34D"/>
-  <ellipse cx="50" cy="25" rx="4" ry="7" fill="#FEF3C7"/>
-  <!-- Flame glow -->
-  <circle cx="50" cy="28" r="15" fill="#FCD34D" opacity="0.3"/>
-  <!-- Small hearts -->
-  <path d="M30 65 C28 62 26 60 28 58 C29 57 30 58 30 58 C30 58 31 57 32 58 C34 60 32 62 30 65" fill="white" opacity="0.8"/>
-  <path d="M70 60 C68 57 66 55 68 53 C69 52 70 53 70 53 C70 53 71 52 72 53 C74 55 72 57 70 60" fill="white" opacity="0.8"/>
+  <ellipse cx="16" cy="7" rx="3" ry="5" fill="#FCD34D"/>
+  <ellipse cx="16" cy="6" rx="1.5" ry="3" fill="#FEF3C7"/>
+  <!-- Glow -->
+  <circle cx="16" cy="7" r="5" fill="#FCD34D" opacity="0.3"/>
+  <!-- Hearts -->
+  <path d="M7 20 C6 18 5 17 6 16 C6.5 15.5 7 16 7 16 C7 16 7.5 15.5 8 16 C9 17 8 18 7 20" fill="white" opacity="0.7"/>
+  <path d="M25 18 C24 16 23 15 24 14 C24.5 13.5 25 14 25 14 C25 14 25.5 13.5 26 14 C27 15 26 16 25 18" fill="white" opacity="0.7"/>
 </svg>

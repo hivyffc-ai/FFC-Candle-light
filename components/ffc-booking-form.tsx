@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/navigation';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { Calendar, Phone, User, Gift, MessageCircle, X, Send, Loader2, CheckCircle, MapPin, Clock, Eye, ChevronDown, Check } from 'lucide-react';
+import { Calendar, Phone, User, Gift, MessageCircle, X, Send, Loader2, CheckCircle, MapPin, Clock, ChevronDown, Check, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -339,10 +339,10 @@ export function FFCBookingForm({ pageTitle, variant = 'default', packageName, de
                         <button
                           type="button"
                           onClick={(e) => handleViewPackage(pkg.slug, e)}
-                          className="shrink-0 inline-flex items-center gap-0.5 px-1.5 py-0.5 text-[9px] sm:text-[10px] font-medium rounded-full bg-rose-100 text-rose-800 hover:bg-rose-700 hover:text-white transition-colors"
+                          className="ml-auto shrink-0 inline-flex items-center gap-1 px-2 py-1 text-[10px] sm:text-xs font-semibold rounded bg-rose-800 text-white hover:bg-rose-900 shadow-sm transition-all hover:shadow-md"
                         >
-                          <Eye className="h-2.5 w-2.5 sm:h-3 sm:w-3" />
                           View
+                          <ChevronRight className="h-3 w-3" />
                         </button>
                       </div>
                     ))}
