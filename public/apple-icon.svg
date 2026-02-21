@@ -1,14 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">
   <defs>
-    <linearGradient id="ffcGradApple" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#D97706;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#EA580C;stop-opacity:1" />
+    <linearGradient id="candleGradApple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B"/>
+      <stop offset="100%" style="stop-color:#B45309"/>
     </linearGradient>
   </defs>
   <!-- Background -->
-  <rect width="180" height="180" rx="40" fill="url(#ffcGradApple)"/>
-  <!-- Heart Icon -->
-  <path d="M90 140 C45 100 35 65 60 50 C80 40 90 55 90 55 C90 55 100 40 120 50 C145 65 135 100 90 140" fill="white" opacity="0.95"/>
-  <!-- FFC Text -->
-  <text x="90" y="105" font-family="Georgia, serif" font-size="32" font-weight="bold" fill="#D97706" text-anchor="middle">FFC</text>
+  <rect width="180" height="180" rx="40" fill="url(#candleGradApple)"/>
+  <!-- Candle -->
+  <rect x="70" y="80" width="40" height="70" rx="4" fill="#FEF3C7"/>
+  <!-- Melted wax drips -->
+  <ellipse cx="75" cy="90" rx="6" ry="16" fill="#FDE68A"/>
+  <ellipse cx="105" cy="92" rx="4" ry="12" fill="#FDE68A"/>
+  <!-- Wick -->
+  <rect x="86" y="60" width="8" height="24" rx="2" fill="#78350F"/>
+  <!-- Flame -->
+  <ellipse cx="90" cy="45" rx="16" ry="24" fill="#FCD34D"/>
+  <ellipse cx="90" cy="40" rx="8" ry="14" fill="#FEF3C7"/>
+  <!-- Flame glow -->
+  <circle cx="90" cy="45" r="30" fill="#FCD34D" opacity="0.3"/>
+  <!-- Small hearts -->
+  <path d="M50 120 C46 114 42 110 46 106 C48 104 50 106 50 106 C50 106 52 104 54 106 C58 110 54 114 50 120" fill="white" opacity="0.8"/>
+  <path d="M130 110 C126 104 122 100 126 96 C128 94 130 96 130 96 C130 96 132 94 134 96 C138 100 134 104 130 110" fill="white" opacity="0.8"/>
 </svg>
