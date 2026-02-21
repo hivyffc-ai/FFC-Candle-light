@@ -3,101 +3,102 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Modern color palette for Study Abroad Consultants */
+/* Romantic Candlelight Dinner Color Palette */
 :root {
-  /* Clean white backgrounds */
-  --background: oklch(0.99 0.002 0);
-  --foreground: oklch(0.2 0.02 35);
+  /* Warm cream backgrounds */
+  --background: oklch(0.98 0.01 60);
+  --foreground: oklch(0.2 0.03 25);
 
-  /* Card colors */
-  --card: oklch(0.98 0.003 0);
-  --card-foreground: oklch(0.2 0.02 35);
+  /* Card colors - warm ivory */
+  --card: oklch(0.97 0.012 55);
+  --card-foreground: oklch(0.2 0.03 25);
 
   /* Popover */
-  --popover: oklch(0.98 0.003 0);
-  --popover-foreground: oklch(0.2 0.02 35);
+  --popover: oklch(0.97 0.012 55);
+  --popover-foreground: oklch(0.2 0.03 25);
 
-  /* Primary - Modern Teal/Cyan */
-  --primary: oklch(0.5 0.15 200);
-  --primary-foreground: oklch(0.99 0.002 0);
+  /* Primary - Deep Burgundy/Wine Red */
+  --primary: oklch(0.4 0.18 25);
+  --primary-foreground: oklch(0.98 0.01 60);
 
-  /* Secondary - Soft Slate */
-  --secondary: oklch(0.65 0.05 200);
-  --secondary-foreground: oklch(0.99 0.002 0);
+  /* Secondary - Rich Maroon */
+  --secondary: oklch(0.35 0.14 20);
+  --secondary-foreground: oklch(0.98 0.01 60);
 
-  /* Muted tones */
-  --muted: oklch(0.92 0.005 0);
-  --muted-foreground: oklch(0.5 0.02 35);
+  /* Muted tones - warm beige */
+  --muted: oklch(0.92 0.02 55);
+  --muted-foreground: oklch(0.45 0.03 25);
 
-  /* Accent - Warm Peach */
-  --accent: oklch(0.75 0.12 50);
-  --accent-foreground: oklch(0.2 0.02 35);
+  /* Accent - Warm Gold/Amber */
+  --accent: oklch(0.75 0.15 70);
+  --accent-foreground: oklch(0.2 0.03 25);
 
   /* Destructive */
-  --destructive: oklch(0.55 0.22 25);
-  --destructive-foreground: oklch(0.99 0.002 0);
+  --destructive: oklch(0.5 0.22 25);
+  --destructive-foreground: oklch(0.98 0.01 60);
 
-  /* Borders and inputs */
-  --border: oklch(0.92 0.005 0);
-  --input: oklch(0.92 0.005 0);
-  --ring: oklch(0.5 0.15 200);
+  /* Borders and inputs - warm rose */
+  --border: oklch(0.88 0.03 30);
+  --input: oklch(0.92 0.02 55);
+  --ring: oklch(0.4 0.18 25);
 
-  /* Charts */
-  --chart-1: oklch(0.5 0.15 200);
-  --chart-2: oklch(0.75 0.12 50);
-  --chart-3: oklch(0.65 0.05 200);
-  --chart-4: oklch(0.7 0.08 150);
-  --chart-5: oklch(0.72 0.1 40);
+  /* Charts - romantic palette */
+  --chart-1: oklch(0.4 0.18 25);
+  --chart-2: oklch(0.75 0.15 70);
+  --chart-3: oklch(0.35 0.14 20);
+  --chart-4: oklch(0.6 0.12 30);
+  --chart-5: oklch(0.7 0.1 50);
 
   --radius: 0.5rem;
 
-  /* Sidebar */
-  --sidebar: oklch(0.98 0.003 0);
-  --sidebar-foreground: oklch(0.2 0.02 35);
-  --sidebar-primary: oklch(0.5 0.15 200);
-  --sidebar-primary-foreground: oklch(0.99 0.002 0);
-  --sidebar-accent: oklch(0.92 0.005 0);
-  --sidebar-accent-foreground: oklch(0.2 0.02 35);
-  --sidebar-border: oklch(0.92 0.005 0);
-  --sidebar-ring: oklch(0.5 0.15 200);
+  /* Sidebar - warm cream */
+  --sidebar: oklch(0.96 0.015 55);
+  --sidebar-foreground: oklch(0.2 0.03 25);
+  --sidebar-primary: oklch(0.4 0.18 25);
+  --sidebar-primary-foreground: oklch(0.98 0.01 60);
+  --sidebar-accent: oklch(0.92 0.02 55);
+  --sidebar-accent-foreground: oklch(0.2 0.03 25);
+  --sidebar-border: oklch(0.88 0.03 30);
+  --sidebar-ring: oklch(0.4 0.18 25);
 }
 
 .dark {
-  --background: oklch(0.15 0.02 35);
-  --foreground: oklch(0.97 0.003 0);
-  --card: oklch(0.18 0.025 35);
-  --card-foreground: oklch(0.97 0.003 0);
-  --popover: oklch(0.18 0.025 35);
-  --popover-foreground: oklch(0.97 0.003 0);
-  --primary: oklch(0.6 0.18 200);
-  --primary-foreground: oklch(0.15 0.02 35);
-  --secondary: oklch(0.5 0.08 200);
-  --secondary-foreground: oklch(0.97 0.003 0);
-  --muted: oklch(0.25 0.02 35);
-  --muted-foreground: oklch(0.7 0.01 65);
-  --accent: oklch(0.75 0.15 50);
-  --accent-foreground: oklch(0.15 0.02 35);
-  --destructive: oklch(0.55 0.22 25);
-  --destructive-foreground: oklch(0.97 0.003 0);
-  --border: oklch(0.25 0.02 35);
-  --input: oklch(0.25 0.02 35);
-  --ring: oklch(0.6 0.18 200);
-  --chart-1: oklch(0.6 0.18 200);
-  --chart-2: oklch(0.75 0.15 50);
-  --chart-3: oklch(0.65 0.1 150);
-  --chart-4: oklch(0.7 0.1 200);
-  --chart-5: oklch(0.72 0.12 40);
-  --sidebar: oklch(0.18 0.025 35);
-  --sidebar-foreground: oklch(0.97 0.003 0);
-  --sidebar-primary: oklch(0.6 0.18 200);
-  --sidebar-primary-foreground: oklch(0.15 0.02 35);
-  --sidebar-accent: oklch(0.25 0.02 35);
-  --sidebar-accent-foreground: oklch(0.97 0.003 0);
-  --sidebar-border: oklch(0.25 0.02 35);
-  --sidebar-ring: oklch(0.6 0.18 200);
+  /* Dark romantic - deep burgundy black */
+  --background: oklch(0.12 0.03 25);
+  --foreground: oklch(0.95 0.015 55);
+  --card: oklch(0.15 0.04 25);
+  --card-foreground: oklch(0.95 0.015 55);
+  --popover: oklch(0.15 0.04 25);
+  --popover-foreground: oklch(0.95 0.015 55);
+  --primary: oklch(0.55 0.2 25);
+  --primary-foreground: oklch(0.12 0.03 25);
+  --secondary: oklch(0.45 0.15 20);
+  --secondary-foreground: oklch(0.95 0.015 55);
+  --muted: oklch(0.22 0.04 25);
+  --muted-foreground: oklch(0.7 0.02 55);
+  --accent: oklch(0.72 0.16 70);
+  --accent-foreground: oklch(0.12 0.03 25);
+  --destructive: oklch(0.5 0.22 25);
+  --destructive-foreground: oklch(0.95 0.015 55);
+  --border: oklch(0.25 0.04 25);
+  --input: oklch(0.22 0.04 25);
+  --ring: oklch(0.55 0.2 25);
+  --chart-1: oklch(0.55 0.2 25);
+  --chart-2: oklch(0.72 0.16 70);
+  --chart-3: oklch(0.45 0.15 20);
+  --chart-4: oklch(0.6 0.12 30);
+  --chart-5: oklch(0.7 0.1 50);
+  --sidebar: oklch(0.15 0.04 25);
+  --sidebar-foreground: oklch(0.95 0.015 55);
+  --sidebar-primary: oklch(0.55 0.2 25);
+  --sidebar-primary-foreground: oklch(0.12 0.03 25);
+  --sidebar-accent: oklch(0.22 0.04 25);
+  --sidebar-accent-foreground: oklch(0.95 0.015 55);
+  --sidebar-border: oklch(0.25 0.04 25);
+  --sidebar-ring: oklch(0.55 0.2 25);
 }
 
-/* Updated fonts for Study Abroad aesthetic */
+/* Romantic Candlelight Dinner Fonts */
 @theme inline {
   --font-sans: "Playfair Display", "serif";
   --font-mono: "Inter", "sans-serif";

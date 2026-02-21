@@ -56,14 +56,14 @@ export default function FFCPackageDetailPage({ package: pkg }: PackageDetailPage
       <FFCHeader />
       
       {/* Breadcrumb */}
-      <div className="bg-amber-50 py-4">
+      <div className="bg-rose-50 py-4">
         <div className="container mx-auto px-4">
           <nav className="flex items-center gap-2 text-sm">
-            <Link href="/" className="text-gray-500 hover:text-amber-600">Home</Link>
+            <Link href="/" className="text-gray-500 hover:text-rose-800">Home</Link>
             <ChevronRight className="h-4 w-4 text-gray-400" />
-            <Link href="/packages" className="text-gray-500 hover:text-amber-600">Packages</Link>
+            <Link href="/packages" className="text-gray-500 hover:text-rose-800">Packages</Link>
             <ChevronRight className="h-4 w-4 text-gray-400" />
-            <span className="text-amber-600 font-medium">{pkg.name}</span>
+            <span className="text-rose-800 font-medium">{pkg.name}</span>
           </nav>
         </div>
       </div>
@@ -109,7 +109,7 @@ export default function FFCPackageDetailPage({ package: pkg }: PackageDetailPage
                 {/* Left Arrow */}
                 <button 
                   onClick={() => scrollThumbnails('left')}
-                  className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 w-7 h-7 md:w-8 md:h-8 bg-white shadow-lg rounded-full flex items-center justify-center hover:bg-amber-50 transition-colors border border-gray-200 ${thumbnailPage === 0 ? 'opacity-30 cursor-not-allowed' : ''}`}
+                  className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 w-7 h-7 md:w-8 md:h-8 bg-white shadow-lg rounded-full flex items-center justify-center hover:bg-rose-50 transition-colors border border-gray-200 ${thumbnailPage === 0 ? 'opacity-30 cursor-not-allowed' : ''}`}
                   disabled={thumbnailPage === 0}
                 >
                   <ChevronLeft className="w-4 h-4 md:w-5 md:h-5 text-gray-600" />
@@ -128,7 +128,7 @@ export default function FFCPackageDetailPage({ package: pkg }: PackageDetailPage
                       <button 
                         key={index}
                         onClick={() => handleThumbnailClick(index)}
-                        className={`flex-shrink-0 w-[calc(20%-6.4px)] aspect-[3/4] rounded-md md:rounded-lg overflow-hidden relative cursor-pointer transition-all ${selectedImage === index ? 'ring-2 ring-amber-500 scale-105' : 'opacity-70 hover:opacity-100'}`}
+                        className={`flex-shrink-0 w-[calc(20%-6.4px)] aspect-[3/4] rounded-md md:rounded-lg overflow-hidden relative cursor-pointer transition-all ${selectedImage === index ? 'ring-2 ring-rose-500 scale-105' : 'opacity-70 hover:opacity-100'}`}
                       >
                         <Image
                           src={image}
@@ -144,7 +144,7 @@ export default function FFCPackageDetailPage({ package: pkg }: PackageDetailPage
                 {/* Right Arrow */}
                 <button 
                   onClick={() => scrollThumbnails('right')}
-                  className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 w-7 h-7 md:w-8 md:h-8 bg-white shadow-lg rounded-full flex items-center justify-center hover:bg-amber-50 transition-colors border border-gray-200 ${thumbnailPage >= totalPages - 1 ? 'opacity-30 cursor-not-allowed' : ''}`}
+                  className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 w-7 h-7 md:w-8 md:h-8 bg-white shadow-lg rounded-full flex items-center justify-center hover:bg-rose-50 transition-colors border border-gray-200 ${thumbnailPage >= totalPages - 1 ? 'opacity-30 cursor-not-allowed' : ''}`}
                   disabled={thumbnailPage >= totalPages - 1}
                 >
                   <ChevronRight className="w-4 h-4 md:w-5 md:h-5 text-gray-600" />
@@ -155,7 +155,7 @@ export default function FFCPackageDetailPage({ package: pkg }: PackageDetailPage
             {/* Right Column - Details */}
             <div className="mt-4 lg:mt-0">
               {/* Title & Tagline */}
-              <Badge className="mb-3 md:mb-4 bg-amber-100 text-amber-700 border-amber-200">
+              <Badge className="mb-3 md:mb-4 bg-rose-100 text-rose-900 border-rose-200">
                 <Heart className="h-3 w-3 md:h-4 md:w-4 mr-1 md:mr-2" /> Couples Only Experience
               </Badge>
               
@@ -176,15 +176,15 @@ export default function FFCPackageDetailPage({ package: pkg }: PackageDetailPage
               </div>
 
               {/* Tagline */}
-              <div className="bg-amber-50 rounded-lg p-3 md:p-4 mb-4 md:mb-6">
-                <p className="text-amber-800 italic text-sm md:text-base">
+              <div className="bg-rose-50 rounded-lg p-3 md:p-4 mb-4 md:mb-6">
+                <p className="text-rose-950 italic text-sm md:text-base">
                   💍 {pkg.name} — where every occasion turns into a forever memory under the stars ✨🌙
                 </p>
               </div>
 
               {/* Price */}
               <div className="mb-4 md:mb-6">
-                <span className="text-2xl md:text-3xl font-bold text-amber-600">{formatPrice(pkg.price)}</span>
+                <span className="text-2xl md:text-3xl font-bold text-rose-800">{formatPrice(pkg.price)}</span>
               </div>
 
               {/* Booking Form Inline */}
@@ -197,7 +197,7 @@ export default function FFCPackageDetailPage({ package: pkg }: PackageDetailPage
       </section>
 
       {/* Package Description */}
-      <section className="py-8 md:py-12 bg-amber-50">
+      <section className="py-8 md:py-12 bg-rose-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-6 md:mb-8 font-serif text-center">
@@ -207,8 +207,8 @@ export default function FFCPackageDetailPage({ package: pkg }: PackageDetailPage
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
               {pkg.features.map((feature, index) => (
                 <div key={index} className="flex items-start gap-3 bg-white rounded-lg p-3 md:p-4">
-                  <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0">
-                    <Check className="h-4 w-4 md:h-5 md:w-5 text-amber-600" />
+                  <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-rose-100 flex items-center justify-center flex-shrink-0">
+                    <Check className="h-4 w-4 md:h-5 md:w-5 text-rose-800" />
                   </div>
                   <div>
                     <p className="text-gray-700 text-sm md:text-base">{feature}</p>
@@ -232,36 +232,36 @@ export default function FFCPackageDetailPage({ package: pkg }: PackageDetailPage
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
-              <div className="bg-amber-50 rounded-lg p-4 border border-amber-100">
-                <h4 className="font-semibold text-amber-800 mb-1">🥤 Welcome Drink</h4>
+              <div className="bg-rose-50 rounded-lg p-4 border border-rose-100">
+                <h4 className="font-semibold text-rose-950 mb-1">🥤 Welcome Drink</h4>
                 <p className="text-gray-600 text-sm">A refreshing welcome to begin your romantic experience</p>
               </div>
-              <div className="bg-amber-50 rounded-lg p-4 border border-amber-100">
-                <h4 className="font-semibold text-amber-800 mb-1">🧀 Cheese Fondue</h4>
+              <div className="bg-rose-50 rounded-lg p-4 border border-rose-100">
+                <h4 className="font-semibold text-rose-950 mb-1">🧀 Cheese Fondue</h4>
                 <p className="text-gray-600 text-sm">Rich, velvety cheese fondue served with cheese balls, wedges, and nachos</p>
               </div>
-              <div className="bg-amber-50 rounded-lg p-4 border border-amber-100">
-                <h4 className="font-semibold text-amber-800 mb-1">🌯 Paneer Tortilla</h4>
+              <div className="bg-rose-50 rounded-lg p-4 border border-rose-100">
+                <h4 className="font-semibold text-rose-950 mb-1">🌯 Paneer Tortilla</h4>
                 <p className="text-gray-600 text-sm">Soft tortilla filled with spicy paneer and chef's special seasoning</p>
               </div>
-              <div className="bg-amber-50 rounded-lg p-4 border border-amber-100">
-                <h4 className="font-semibold text-amber-800 mb-1">🍟 Peri Peri Fries with Mac & Cheese</h4>
+              <div className="bg-rose-50 rounded-lg p-4 border border-rose-100">
+                <h4 className="font-semibold text-rose-950 mb-1">🍟 Peri Peri Fries with Mac & Cheese</h4>
                 <p className="text-gray-600 text-sm">Creamy mac & cheese paired with peri-peri fries</p>
               </div>
-              <div className="bg-amber-50 rounded-lg p-4 border border-amber-100">
-                <h4 className="font-semibold text-amber-800 mb-1">🍞 Tangy Loaf</h4>
+              <div className="bg-rose-50 rounded-lg p-4 border border-rose-100">
+                <h4 className="font-semibold text-rose-950 mb-1">🍞 Tangy Loaf</h4>
                 <p className="text-gray-600 text-sm">Warm loaf served with cheesy garlic sauce</p>
               </div>
-              <div className="bg-amber-50 rounded-lg p-4 border border-amber-100">
-                <h4 className="font-semibold text-amber-800 mb-1">🍫 Dessert with Chocolate Bite</h4>
+              <div className="bg-rose-50 rounded-lg p-4 border border-rose-100">
+                <h4 className="font-semibold text-rose-950 mb-1">🍫 Dessert with Chocolate Bite</h4>
                 <p className="text-gray-600 text-sm">A sweet ending with rich chocolate indulgence</p>
               </div>
             </div>
 
             {/* Cake & Champagne */}
             <div className="mt-6 md:mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className={`rounded-xl p-4 md:p-6 text-center ${pkg.cakeIncluded ? 'bg-gradient-to-br from-green-100 to-emerald-100 border-2 border-green-200' : 'bg-gradient-to-br from-amber-100 to-orange-100'}`}>
-                <h4 className={`font-bold text-lg md:text-xl mb-2 ${pkg.cakeIncluded ? 'text-green-800' : 'text-amber-800'}`}>🎂 Cake & Champagne</h4>
+              <div className={`rounded-xl p-4 md:p-6 text-center ${pkg.cakeIncluded ? 'bg-gradient-to-br from-green-100 to-emerald-100 border-2 border-green-200' : 'bg-gradient-to-br from-rose-100 to-pink-100'}`}>
+                <h4 className={`font-bold text-lg md:text-xl mb-2 ${pkg.cakeIncluded ? 'text-green-800' : 'text-rose-950'}`}>🎂 Cake & Champagne</h4>
                 {pkg.cakeIncluded ? (
                   <>
                     <p className="text-green-700 text-sm md:text-base font-semibold">✅ <strong>Cake:</strong> Complimentary (FREE!)</p>
@@ -269,13 +269,13 @@ export default function FFCPackageDetailPage({ package: pkg }: PackageDetailPage
                   </>
                 ) : (
                   <>
-                    <p className="text-amber-700 text-sm md:text-base"><strong>Cake:</strong> ₹500/- (Extra Cost)</p>
+                    <p className="text-rose-900 text-sm md:text-base"><strong>Cake:</strong> ₹500/- (Extra Cost)</p>
                     <p className="text-gray-700 text-sm md:text-base mt-1"><strong>Champagne:</strong> ₹500/- (Non-Alcoholic Fruit Flavour)</p>
                   </>
                 )}
               </div>
-              <div className="bg-gradient-to-br from-amber-100 to-orange-100 rounded-xl p-4 md:p-6 text-center">
-                <h4 className="font-bold text-lg md:text-xl text-amber-800 mb-2">⏰ 3 Mesmerizing Hours</h4>
+              <div className="bg-gradient-to-br from-rose-100 to-pink-100 rounded-xl p-4 md:p-6 text-center">
+                <h4 className="font-bold text-lg md:text-xl text-rose-950 mb-2">⏰ 3 Mesmerizing Hours</h4>
                 <p className="text-gray-700 text-sm md:text-base">Three magical hours designed to create unforgettable memories</p>
               </div>
             </div>
@@ -284,7 +284,7 @@ export default function FFCPackageDetailPage({ package: pkg }: PackageDetailPage
       </section>
 
       {/* What You Will Get - Decoration */}
-      <section className="py-8 md:py-12 bg-amber-50">
+      <section className="py-8 md:py-12 bg-rose-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-6 md:mb-8 font-serif text-center">
@@ -348,7 +348,7 @@ export default function FFCPackageDetailPage({ package: pkg }: PackageDetailPage
               <p className="text-gray-600 mb-3 md:mb-4 text-sm md:text-base">
                 Rescheduling must be informed at least one day prior. Event can be rescheduled within one month, subject to availability.
               </p>
-              <p className="text-amber-600 font-semibold text-sm md:text-base">
+              <p className="text-rose-800 font-semibold text-sm md:text-base">
                 * No Refund Policy Applicable
               </p>
             </div>
@@ -366,8 +366,8 @@ export default function FFCPackageDetailPage({ package: pkg }: PackageDetailPage
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6">
             {relatedPackages.map((relPkg) => (
               <Link key={relPkg.id} href={`/packages/${relPkg.slug}`}>
-                <Card className="h-full hover:shadow-lg transition-all hover:-translate-y-1 border-amber-100 group">
-                  <div className="aspect-square md:aspect-video bg-gradient-to-br from-amber-100 to-orange-100 relative overflow-hidden">
+                <Card className="h-full hover:shadow-lg transition-all hover:-translate-y-1 border-rose-100 group">
+                  <div className="aspect-square md:aspect-video bg-gradient-to-br from-rose-100 to-pink-100 relative overflow-hidden">
                     <Image
                       src={relPkg.thumbnail}
                       alt={relPkg.name}
@@ -376,13 +376,13 @@ export default function FFCPackageDetailPage({ package: pkg }: PackageDetailPage
                     />
                   </div>
                   <CardContent className="p-2 md:p-4">
-                    <h3 className="font-semibold text-sm md:text-lg mb-1 group-hover:text-amber-600 transition-colors line-clamp-2">
+                    <h3 className="font-semibold text-sm md:text-lg mb-1 group-hover:text-rose-800 transition-colors line-clamp-2">
                       {relPkg.name}
                     </h3>
                     <p className="text-gray-600 text-xs md:text-sm line-clamp-2 mb-1 md:mb-2 hidden md:block">
                       {relPkg.shortDescription}
                     </p>
-                    <p className="text-base md:text-xl font-bold text-amber-600">
+                    <p className="text-base md:text-xl font-bold text-rose-800">
                       {formatPrice(relPkg.price)}
                     </p>
                   </CardContent>

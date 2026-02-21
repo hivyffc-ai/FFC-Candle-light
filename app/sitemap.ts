@@ -2,12 +2,14 @@
  * FRIENDS FACTORY CAFE - SEO OPTIMIZED SITEMAP
  * Domain: friendsfactorycafe.com
  * 
- * Total Pages: 200+ including:
+ * Pure Candlelight Dinner Focus - Updated January 2026
+ * 
+ * Total Pages: 80+ including:
  * - 1 Homepage (priority 1.0)
- * - 7 Static pages (priority 0.8)
- * - 8 Service category pages (priority 0.9)
+ * - 6 Static pages (priority 0.8)
+ * - 1 Candlelight Dinner category page (priority 0.9)
  * - 8 Package detail pages (priority 0.85)
- * - 120 Keyword pages (priority 0.85) - Main SEO pages
+ * - 34 Candlelight Dinner keyword pages (priority 0.85) - Main SEO pages
  * - 40 Vadodara Area pages (priority 0.8)
  * 
  * Last Updated: January 2026
@@ -42,7 +44,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: '/contact', priority: 0.9, freq: 'monthly' as const },
     { path: '/menu', priority: 0.8, freq: 'weekly' as const },
     { path: '/packages', priority: 0.9, freq: 'weekly' as const },
-    { path: '/services', priority: 0.9, freq: 'weekly' as const },
     { path: '/virtual-tour', priority: 0.7, freq: 'monthly' as const },
     { path: '/areas', priority: 0.8, freq: 'weekly' as const },
   ];
@@ -56,8 +57,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     });
   });
   
-  // ==================== SERVICE CATEGORY PAGES ====================
-  // 8 main service categories - high priority
+  // ==================== CANDLELIGHT DINNER CATEGORY PAGE ====================
+  // Main candlelight dinner landing page
   serviceCategories.forEach((service) => {
     entries.push({
       url: `${baseUrl}/${service.slug}`,
@@ -78,8 +79,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     });
   });
   
-  // ==================== KEYWORD PAGES (MAIN SEO) ====================
-  // 120 keyword pages (15 per service × 8 services)
+  // ==================== CANDLELIGHT DINNER KEYWORD PAGES (MAIN SEO) ====================
+  // 34 candlelight dinner keyword pages
   // These are the main SEO landing pages targeting specific search queries
   // URL Structure: /{keyword}
   serviceCategories.forEach((service) => {

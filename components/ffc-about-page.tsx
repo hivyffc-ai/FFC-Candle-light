@@ -29,7 +29,7 @@ export default function FFCAboutPage() {
       <FFCHeader />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-amber-600 via-orange-500 to-amber-700 text-white py-16 md:py-24">
+      <section className="bg-gradient-to-br from-rose-800 via-pink-500 to-rose-900 text-white py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
           <Badge className="mb-4 bg-white/20 text-white border-white/30">
             <Heart className="h-4 w-4 mr-2" /> About Us
@@ -48,7 +48,7 @@ export default function FFCAboutPage() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="order-2 lg:order-1">
-              <Badge className="mb-4 bg-amber-100 text-amber-700 border-amber-200">
+              <Badge className="mb-4 bg-rose-100 text-rose-900 border-rose-200">
                 Our Story
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 font-serif">
@@ -64,20 +64,20 @@ export default function FFCAboutPage() {
                 <p>
                   From heartfelt <strong>birthday surprises</strong> and <strong>anniversary celebrations</strong> to unforgettable <strong>marriage proposals</strong>, engagement reveals, <strong>pre-wedding shoots</strong>, pregnancy announcements, and last candlelight dinners before marriage, we've hosted <strong>500+ magical evenings</strong>.
                 </p>
-                <p className="font-medium text-amber-700">
+                <p className="font-medium text-rose-900">
                   Our mission: Create spaces where love stories unfold naturally.
                 </p>
               </div>
               <div className="mt-6">
                 <Link href="/contact">
-                  <Button className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white">
+                  <Button className="bg-gradient-to-r from-rose-800 to-rose-700 hover:from-rose-900 hover:to-orange-700 text-white">
                     Book Your Moment - Call {siteConfig.phone}
                   </Button>
                 </Link>
               </div>
             </div>
             <div className="order-1 lg:order-2">
-              <div className="aspect-[4/3] bg-gradient-to-br from-amber-100 to-orange-100 rounded-2xl overflow-hidden relative shadow-xl">
+              <div className="aspect-[4/3] bg-gradient-to-br from-rose-100 to-pink-100 rounded-2xl overflow-hidden relative shadow-xl">
                 <Image
                   src="/images/about/Our story.jpg"
                   alt="Friends Factory Cafe Vadodara - Romantic Rooftop Setup for Candlelight Dinner"
@@ -96,7 +96,7 @@ export default function FFCAboutPage() {
       </section>
 
       {/* Stats */}
-      <section className="py-12 bg-amber-50">
+      <section className="py-12 bg-rose-50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {[
@@ -106,10 +106,10 @@ export default function FFCAboutPage() {
               { icon: Clock, number: "5+", label: "Years of Love" },
             ].map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-amber-100 flex items-center justify-center mx-auto mb-3">
-                  <stat.icon className="h-7 w-7 md:h-8 md:w-8 text-amber-600" />
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-rose-100 flex items-center justify-center mx-auto mb-3">
+                  <stat.icon className="h-7 w-7 md:h-8 md:w-8 text-rose-800" />
                 </div>
-                <p className="text-2xl md:text-3xl font-bold text-amber-600">{stat.number}</p>
+                <p className="text-2xl md:text-3xl font-bold text-rose-800">{stat.number}</p>
                 <p className="text-gray-600 text-sm md:text-base">{stat.label}</p>
               </div>
             ))}
@@ -122,7 +122,7 @@ export default function FFCAboutPage() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="order-1">
-              <div className="aspect-[4/3] bg-gradient-to-br from-amber-100 to-orange-100 rounded-2xl overflow-hidden relative shadow-xl">
+              <div className="aspect-[4/3] bg-gradient-to-br from-rose-100 to-pink-100 rounded-2xl overflow-hidden relative shadow-xl">
                 <Image
                   src="/images/about/Our team.webp"
                   alt="Friends Factory Cafe Team - Dedicated Staff for Romantic Celebrations Vadodara"
@@ -137,7 +137,7 @@ export default function FFCAboutPage() {
               </div>
             </div>
             <div className="order-2">
-              <Badge className="mb-4 bg-amber-100 text-amber-700 border-amber-200">
+              <Badge className="mb-4 bg-rose-100 text-rose-900 border-rose-200">
                 Our Team
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 font-serif">
@@ -153,7 +153,7 @@ export default function FFCAboutPage() {
                 <p>
                   Whether you're planning a <strong>candlelight dinner in Vadodara</strong>, a <strong>birthday surprise for your girlfriend</strong>, an <strong>anniversary celebration</strong>, or a <strong>romantic proposal</strong>, our team handles everything from setup to cleanup so you can focus on love.
                 </p>
-                <p className="font-medium text-amber-700">
+                <p className="font-medium text-rose-900">
                   Join us and let us make your evening truly extraordinary.
                 </p>
               </div>
@@ -163,11 +163,11 @@ export default function FFCAboutPage() {
       </section>
 
       {/* Why Choose Us - Left Content, Right Image */}
-      <section className="py-16 md:py-20 bg-amber-50">
+      <section className="py-16 md:py-20 bg-rose-50">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="order-2 lg:order-1">
-              <Badge className="mb-4 bg-amber-100 text-amber-700 border-amber-200">
+              <Badge className="mb-4 bg-rose-100 text-rose-900 border-rose-200">
                 Why Choose Us
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 font-serif">
@@ -175,8 +175,8 @@ export default function FFCAboutPage() {
               </h2>
               <div className="space-y-4">
                 <div className="flex gap-4 items-start">
-                  <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-5 w-5 text-amber-600" />
+                  <div className="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="h-5 w-5 text-rose-800" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Prime Gotri Rooftop Location</h3>
@@ -185,8 +185,8 @@ export default function FFCAboutPage() {
                 </div>
                 
                 <div className="flex gap-4 items-start">
-                  <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0">
-                    <Award className="h-5 w-5 text-amber-600" />
+                  <div className="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center flex-shrink-0">
+                    <Award className="h-5 w-5 text-rose-800" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Custom Celebration Packages</h3>
@@ -195,8 +195,8 @@ export default function FFCAboutPage() {
                 </div>
                 
                 <div className="flex gap-4 items-start">
-                  <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0">
-                    <Heart className="h-5 w-5 text-amber-600" />
+                  <div className="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center flex-shrink-0">
+                    <Heart className="h-5 w-5 text-rose-800" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Pan-India Appeal, Local Heart</h3>
@@ -205,8 +205,8 @@ export default function FFCAboutPage() {
                 </div>
                 
                 <div className="flex gap-4 items-start">
-                  <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0">
-                    <Star className="h-5 w-5 text-amber-600" />
+                  <div className="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center flex-shrink-0">
+                    <Star className="h-5 w-5 text-rose-800" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1">5-Star Experience Guaranteed</h3>
@@ -216,7 +216,7 @@ export default function FFCAboutPage() {
               </div>
             </div>
             <div className="order-1 lg:order-2">
-              <div className="aspect-[4/3] bg-gradient-to-br from-amber-100 to-orange-100 rounded-2xl overflow-hidden relative shadow-xl">
+              <div className="aspect-[4/3] bg-gradient-to-br from-rose-100 to-pink-100 rounded-2xl overflow-hidden relative shadow-xl">
                 <Image
                   src="/images/about/Why us.png"
                   alt="Why Choose Friends Factory Cafe - Best Romantic Venue Vadodara"
@@ -235,7 +235,7 @@ export default function FFCAboutPage() {
       </section>
 
       {/* Google Reviews Slider Section */}
-      <section className="py-16 md:py-20 bg-amber-50">
+      <section className="py-16 md:py-20 bg-rose-50">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
             <div>
@@ -265,7 +265,7 @@ export default function FFCAboutPage() {
               <p className="text-lg font-bold text-gray-800 mb-2">EXCELLENT</p>
               <div className="flex gap-1 mb-2">
                 {[1, 2, 3, 4, 5].map((star) => (
-                  <Star key={star} className="h-6 w-6 fill-amber-400 text-amber-400" />
+                  <Star key={star} className="h-6 w-6 fill-rose-400 text-rose-400" />
                 ))}
               </div>
               <p className="text-gray-600 mb-4">Based on <strong>1256 reviews</strong></p>
@@ -323,7 +323,7 @@ export default function FFCAboutPage() {
                     </div>
                     <div className="flex gap-0.5 mb-2">
                       {[1, 2, 3, 4, 5].map((star) => (
-                        <Star key={star} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                        <Star key={star} className="h-4 w-4 fill-rose-400 text-rose-400" />
                       ))}
                       <span className="ml-2 text-cyan-500">✓</span>
                     </div>
@@ -353,7 +353,7 @@ export default function FFCAboutPage() {
                     </div>
                     <div className="flex gap-0.5 mb-2">
                       {[1, 2, 3, 4, 5].map((star) => (
-                        <Star key={star} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                        <Star key={star} className="h-4 w-4 fill-rose-400 text-rose-400" />
                       ))}
                       <span className="ml-2 text-cyan-500">✓</span>
                     </div>
@@ -383,7 +383,7 @@ export default function FFCAboutPage() {
                     </div>
                     <div className="flex gap-0.5 mb-2">
                       {[1, 2, 3, 4, 5].map((star) => (
-                        <Star key={star} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                        <Star key={star} className="h-4 w-4 fill-rose-400 text-rose-400" />
                       ))}
                       <span className="ml-2 text-cyan-500">✓</span>
                     </div>
@@ -413,7 +413,7 @@ export default function FFCAboutPage() {
                     </div>
                     <div className="flex gap-0.5 mb-2">
                       {[1, 2, 3, 4, 5].map((star) => (
-                        <Star key={star} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                        <Star key={star} className="h-4 w-4 fill-rose-400 text-rose-400" />
                       ))}
                       <span className="ml-2 text-cyan-500">✓</span>
                     </div>
@@ -443,7 +443,7 @@ export default function FFCAboutPage() {
                     </div>
                     <div className="flex gap-0.5 mb-2">
                       {[1, 2, 3, 4, 5].map((star) => (
-                        <Star key={star} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                        <Star key={star} className="h-4 w-4 fill-rose-400 text-rose-400" />
                       ))}
                       <span className="ml-2 text-cyan-500">✓</span>
                     </div>
@@ -473,7 +473,7 @@ export default function FFCAboutPage() {
                     </div>
                     <div className="flex gap-0.5 mb-2">
                       {[1, 2, 3, 4, 5].map((star) => (
-                        <Star key={star} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                        <Star key={star} className="h-4 w-4 fill-rose-400 text-rose-400" />
                       ))}
                       <span className="ml-2 text-cyan-500">✓</span>
                     </div>
@@ -516,7 +516,7 @@ export default function FFCAboutPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={`tel:${siteConfig.phone}`}>
-              <Button size="lg" className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white w-full sm:w-auto">
+              <Button size="lg" className="bg-gradient-to-r from-rose-800 to-rose-700 hover:from-rose-900 hover:to-orange-700 text-white w-full sm:w-auto">
                 <Phone className="h-5 w-5 mr-2" />
                 Call {siteConfig.phone}
               </Button>
@@ -540,29 +540,29 @@ export default function FFCAboutPage() {
             </h2>
             
             <div className="grid md:grid-cols-3 gap-6">
-              <Card className="border-amber-200">
+              <Card className="border-rose-200">
                 <CardContent className="p-6 text-center">
-                  <MapPin className="h-8 w-8 text-amber-600 mx-auto mb-4" />
+                  <MapPin className="h-8 w-8 text-rose-800 mx-auto mb-4" />
                   <h3 className="font-semibold mb-2">Location</h3>
                   <p className="text-gray-600 text-sm">{siteConfig.address}</p>
                 </CardContent>
               </Card>
               
-              <Card className="border-amber-200">
+              <Card className="border-rose-200">
                 <CardContent className="p-6 text-center">
-                  <Phone className="h-8 w-8 text-amber-600 mx-auto mb-4" />
+                  <Phone className="h-8 w-8 text-rose-800 mx-auto mb-4" />
                   <h3 className="font-semibold mb-2">Phone</h3>
-                  <a href={`tel:${siteConfig.phone}`} className="text-amber-600 hover:text-amber-700 font-medium">
+                  <a href={`tel:${siteConfig.phone}`} className="text-rose-800 hover:text-rose-900 font-medium">
                     {siteConfig.phone}
                   </a>
                 </CardContent>
               </Card>
               
-              <Card className="border-amber-200">
+              <Card className="border-rose-200">
                 <CardContent className="p-6 text-center">
-                  <Mail className="h-8 w-8 text-amber-600 mx-auto mb-4" />
+                  <Mail className="h-8 w-8 text-rose-800 mx-auto mb-4" />
                   <h3 className="font-semibold mb-2">Email</h3>
-                  <a href={`mailto:${siteConfig.email}`} className="text-amber-600 hover:text-amber-700">
+                  <a href={`mailto:${siteConfig.email}`} className="text-rose-800 hover:text-rose-900">
                     {siteConfig.email}
                   </a>
                 </CardContent>

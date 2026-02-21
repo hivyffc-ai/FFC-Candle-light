@@ -26,7 +26,7 @@ export default function FFCVirtualTourPage() {
       <FFCHeader />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-amber-600 via-orange-500 to-amber-700 text-white py-16 md:py-24">
+      <section className="bg-gradient-to-br from-rose-800 via-pink-500 to-rose-900 text-white py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
           <Badge className="mb-4 bg-white/20 text-white border-white/30">
             <Camera className="h-4 w-4 mr-2" /> Explore Our Spaces
@@ -74,7 +74,7 @@ export default function FFCVirtualTourPage() {
                   className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/40 transition-colors cursor-pointer"
                 >
                   <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
-                    <Play className="w-10 h-10 text-amber-600 ml-1" fill="currentColor" />
+                    <Play className="w-10 h-10 text-rose-800 ml-1" fill="currentColor" />
                   </div>
                 </button>
               )}
@@ -84,7 +84,7 @@ export default function FFCVirtualTourPage() {
       </section>
 
       {/* Gallery Section */}
-      <section className="py-16 bg-amber-50">
+      <section className="py-16 bg-rose-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold font-serif mb-4">Our Setups Gallery</h2>
@@ -95,7 +95,7 @@ export default function FFCVirtualTourPage() {
             {packages.map((pkg) => (
               <Link key={pkg.id} href={`/packages/${pkg.slug}`}>
                 <Card className="overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1 group">
-                  <div className="aspect-square bg-gradient-to-br from-amber-100 to-orange-100 relative overflow-hidden">
+                  <div className="aspect-square bg-gradient-to-br from-rose-100 to-pink-100 relative overflow-hidden">
                     <Image
                       src={pkg.thumbnail}
                       alt={pkg.name}
@@ -107,7 +107,7 @@ export default function FFCVirtualTourPage() {
                     </div>
                   </div>
                   <CardContent className="p-4">
-                    <h3 className="font-semibold text-sm line-clamp-1 group-hover:text-amber-600 transition-colors">
+                    <h3 className="font-semibold text-sm line-clamp-1 group-hover:text-rose-800 transition-colors">
                       {pkg.name}
                     </h3>
                   </CardContent>
@@ -145,7 +145,7 @@ export default function FFCVirtualTourPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-amber-50">
+      <section className="py-16 bg-rose-50">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4 font-serif">
             Ready to Experience It In Person?
@@ -155,7 +155,7 @@ export default function FFCVirtualTourPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/packages">
-              <Button size="lg" className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white">
+              <Button size="lg" className="bg-gradient-to-r from-rose-800 to-rose-700 hover:from-rose-900 hover:to-orange-700 text-white">
                 View All Packages <ChevronRight className="h-5 w-5 ml-2" />
               </Button>
             </Link>

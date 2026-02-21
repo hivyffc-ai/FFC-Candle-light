@@ -1,32 +1,35 @@
 /**
  * MAIN PAGE - FRIENDS FACTORY CAFE VADODARA
- * The main home page for Friends Factory Cafe - Vadodara
+ * The main home page for Candlelight Dinner - Friends Factory Cafe Vadodara
  */
 
 import { Metadata } from "next";
 import FFCHomePage from "@/components/ffc-home-page";
 import { siteConfig } from "@/lib/ffc-config";
 
-// Dynamic metadata for Friends Factory Cafe
+// Dynamic metadata for Candlelight Dinner Vadodara
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: `${siteConfig.name} | Romantic Celebrations for Couples in Vadodara`,
-    description: `${siteConfig.tagline}. Premium romantic celebration services for couples in Vadodara. Candlelight dinners, birthday surprises, anniversary celebrations, proposals & more.`,
+    title: `Candlelight Dinner Vadodara | Best Romantic Dining | ${siteConfig.name}`,
+    description: `${siteConfig.tagline}. Experience the best candlelight dinner in Vadodara with private rooftop dining, stunning city views, gourmet cuisine & romantic ambiance. Book now!`,
     keywords: [
-      'friends factory cafe vadodara',
-      'romantic celebration vadodara',
       'candlelight dinner vadodara',
-      'birthday surprise vadodara',
-      'anniversary celebration vadodara',
-      'couples only cafe vadodara',
-      'rooftop dinner vadodara',
-      'private dining vadodara'
+      'best candlelight dinner vadodara',
+      'candlelight dinner for couples vadodara',
+      'romantic candlelight dinner vadodara',
+      'candlelight dinner restaurants vadodara',
+      'candlelight dinner near me vadodara',
+      'private candlelight dinner vadodara',
+      'rooftop candlelight dinner vadodara',
+      'candlelight dinner packages vadodara',
+      'candlelight dinner price vadodara',
+      'friends factory cafe vadodara'
     ],
     alternates: {
       canonical: siteConfig.website,
     },
     openGraph: {
-      title: `${siteConfig.name} | Romantic Celebrations`,
+      title: `Candlelight Dinner Vadodara | ${siteConfig.name}`,
       description: siteConfig.tagline,
       url: siteConfig.website,
       type: "website",

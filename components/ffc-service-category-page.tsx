@@ -354,20 +354,20 @@ export default function FFCServiceCategoryPage({ service }: ServiceCategoryPageP
       <FFCHeader />
       
       {/* Breadcrumb */}
-      <div className="bg-amber-50 py-4">
+      <div className="bg-rose-50 py-4">
         <div className="container mx-auto px-4">
           <nav className="flex items-center gap-2 text-sm flex-wrap">
-            <Link href="/" className="text-gray-500 hover:text-amber-600">Home</Link>
+            <Link href="/" className="text-gray-500 hover:text-rose-800">Home</Link>
             <ChevronRight className="h-4 w-4 text-gray-400" />
-            <Link href="/services" className="text-gray-500 hover:text-amber-600">Services</Link>
+            <Link href="/services" className="text-gray-500 hover:text-rose-800">Services</Link>
             <ChevronRight className="h-4 w-4 text-gray-400" />
-            <span className="text-amber-600 font-medium">{service.name}</span>
+            <span className="text-rose-800 font-medium">{service.name}</span>
           </nav>
         </div>
       </div>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-amber-600 via-orange-500 to-amber-700 text-white py-16 md:py-24">
+      <section className="bg-gradient-to-br from-rose-800 via-pink-500 to-rose-900 text-white py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
@@ -384,7 +384,7 @@ export default function FFCServiceCategoryPage({ service }: ServiceCategoryPageP
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <FFCBookNowButton 
                   pageTitle={service.name} 
-                  className="bg-white text-amber-600 hover:bg-amber-50 text-lg px-8 py-6" 
+                  className="bg-white text-rose-800 hover:bg-rose-50 text-lg px-8 py-6" 
                 />
                 <a href={`tel:${siteConfig.phone}`}>
                   <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white w-full sm:w-auto">
@@ -431,7 +431,7 @@ export default function FFCServiceCategoryPage({ service }: ServiceCategoryPageP
             {/* Why Choose Us Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {content.whyChooseUs.map((item, index) => (
-                <Card key={index} className="text-center p-6 border-amber-100 hover:shadow-lg transition-shadow">
+                <Card key={index} className="text-center p-6 border-rose-100 hover:shadow-lg transition-shadow">
                   <span className="text-4xl mb-4 block">{item.icon}</span>
                   <h3 className="font-bold text-gray-800 mb-2">{item.title}</h3>
                   <p className="text-sm text-gray-600">{item.description}</p>
@@ -443,7 +443,7 @@ export default function FFCServiceCategoryPage({ service }: ServiceCategoryPageP
       </section>
 
       {/* What's Included */}
-      <section className="py-16 bg-amber-50">
+      <section className="py-16 bg-rose-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold mb-8 font-serif text-center text-gray-800">
@@ -470,7 +470,7 @@ export default function FFCServiceCategoryPage({ service }: ServiceCategoryPageP
           <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
             {content.process.map((step, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-rose-500 to-pink-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
                   {step.step}
                 </div>
                 <h3 className="font-bold text-gray-800 mb-2">{step.title}</h3>
@@ -482,7 +482,7 @@ export default function FFCServiceCategoryPage({ service }: ServiceCategoryPageP
       </section>
 
       {/* Packages Section */}
-      <section className="py-16 bg-gradient-to-br from-amber-50 to-orange-50">
+      <section className="py-16 bg-gradient-to-br from-rose-50 to-pink-50">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold mb-4 font-serif text-center text-gray-800">
             Our {service.name} Packages
@@ -494,18 +494,18 @@ export default function FFCServiceCategoryPage({ service }: ServiceCategoryPageP
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {relatedPackages.map((pkg) => (
               <Link key={pkg.id} href={`/packages/${pkg.slug}`}>
-                <Card className="h-full hover:shadow-xl transition-all hover:-translate-y-2 border-amber-100 overflow-hidden group">
-                  <div className="aspect-[4/3] bg-gradient-to-br from-amber-200 to-orange-200 flex items-center justify-center">
+                <Card className="h-full hover:shadow-xl transition-all hover:-translate-y-2 border-rose-100 overflow-hidden group">
+                  <div className="aspect-[4/3] bg-gradient-to-br from-rose-200 to-pink-200 flex items-center justify-center">
                     <span className="text-6xl">{pkg.emoji}</span>
                   </div>
                   <CardContent className="p-4">
-                    <h3 className="font-bold text-gray-800 mb-2 group-hover:text-amber-600 transition-colors line-clamp-2">
+                    <h3 className="font-bold text-gray-800 mb-2 group-hover:text-rose-800 transition-colors line-clamp-2">
                       {pkg.name}
                     </h3>
                     <p className="text-sm text-gray-600 mb-3 line-clamp-2">{pkg.shortDescription}</p>
                     <div className="flex items-center justify-between">
-                      <span className="text-amber-600 font-bold">{formatPrice(pkg.price)}</span>
-                      <span className="text-sm text-amber-600">View Details →</span>
+                      <span className="text-rose-800 font-bold">{formatPrice(pkg.price)}</span>
+                      <span className="text-sm text-rose-800">View Details →</span>
                     </div>
                   </CardContent>
                 </Card>
@@ -515,7 +515,7 @@ export default function FFCServiceCategoryPage({ service }: ServiceCategoryPageP
           
           <div className="text-center mt-8">
             <Link href="/packages">
-              <Button size="lg" className="bg-gradient-to-r from-amber-600 to-orange-500 hover:from-amber-700 hover:to-orange-600 text-white">
+              <Button size="lg" className="bg-gradient-to-r from-rose-800 to-pink-500 hover:from-rose-900 hover:to-rose-700 text-white">
                 View All 8 Packages
               </Button>
             </Link>
@@ -538,7 +538,7 @@ export default function FFCServiceCategoryPage({ service }: ServiceCategoryPageP
               <Link key={keyword.slug} href={`/${keyword.slug}`}>
                 <Badge 
                   variant="outline" 
-                  className="px-4 py-2 text-sm hover:bg-amber-50 hover:border-amber-300 cursor-pointer transition-colors"
+                  className="px-4 py-2 text-sm hover:bg-rose-50 hover:border-rose-300 cursor-pointer transition-colors"
                 >
                   {keyword.title}
                 </Badge>
@@ -555,19 +555,19 @@ export default function FFCServiceCategoryPage({ service }: ServiceCategoryPageP
       </section>
 
       {/* Testimonial */}
-      <section className="py-16 bg-amber-50">
+      <section className="py-16 bg-rose-50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <div className="flex justify-center gap-1 mb-4">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-6 w-6 fill-amber-400 text-amber-400" />
+                <Star key={i} className="h-6 w-6 fill-rose-400 text-rose-400" />
               ))}
             </div>
             <blockquote className="text-xl md:text-2xl text-gray-700 italic mb-6 font-serif">
               "{content.testimonial.text}"
             </blockquote>
             <div className="font-bold text-gray-800">{content.testimonial.name}</div>
-            <div className="text-amber-600 text-sm">{content.testimonial.occasion}</div>
+            <div className="text-rose-800 text-sm">{content.testimonial.occasion}</div>
           </div>
         </div>
       </section>
@@ -582,7 +582,7 @@ export default function FFCServiceCategoryPage({ service }: ServiceCategoryPageP
             <Accordion type="single" collapsible className="space-y-4">
               {content.faqs.map((faq, index) => (
                 <AccordionItem key={index} value={`faq-${index}`} className="border rounded-lg px-4">
-                  <AccordionTrigger className="text-left font-medium text-gray-800 hover:text-amber-600">
+                  <AccordionTrigger className="text-left font-medium text-gray-800 hover:text-rose-800">
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-gray-600">
@@ -606,7 +606,7 @@ export default function FFCServiceCategoryPage({ service }: ServiceCategoryPageP
       </section>
 
       {/* Booking Form */}
-      <section className="py-16 bg-gradient-to-br from-amber-600 to-orange-500">
+      <section className="py-16 bg-gradient-to-br from-rose-800 to-pink-500">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-white">

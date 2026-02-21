@@ -600,7 +600,17 @@ The entire romantic birthday surprise planning process is handled with care and 
   }
 };
 
-// Helper function to get content by slug
+// Import candlelight content
+import { candlelightDinnerContent, CandlelightKeywordContent, getCandlelightContent } from './ffc-candlelight-content';
+
+// Helper function to get content by slug - checks candlelight content first, then birthday content
 export function getKeywordContent(slug: string): UniqueKeywordContent | null {
+  // First check candlelight dinner content (primary focus)
+  const candlelightContent = getCandlelightContent(slug);
+  if (candlelightContent) {
+    // Convert CandlelightKeywordContent to UniqueKeywordContent format
+    return candlelightContent as unknown as UniqueKeywordContent;
+  }
+  // Fall back to birthday content
   return birthdaySurpriseContent[slug] || null;
 }

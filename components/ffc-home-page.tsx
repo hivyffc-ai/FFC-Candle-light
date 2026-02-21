@@ -20,122 +20,109 @@ import { siteConfig, packages, serviceCategories, vadodaraAreas, formatPrice, ge
 const experienceFeatures = [
   {
     icon: Clock,
-    title: "3 Mesmerizing Hours",
-    description: "Three magical hours designed to create unforgettable memories"
+    title: "3 Hours Private Dining",
+    description: "Exclusive candlelight dinner experience with uninterrupted romance"
   },
   {
     icon: Gift,
-    title: "Cake & Champagne",
-    description: "Complimentary cake & non-alcoholic champagne (₹500)"
+    title: "Gourmet Cuisine",
+    description: "Multi-course dinner with welcome drinks & complimentary cake"
   },
   {
     icon: Camera,
-    title: "Photo-Ready Setup",
-    description: "Instagram-worthy decorations for your special moments"
+    title: "Hundreds of Candles",
+    description: "Magical ambiance with real candles, fairy lights & rose petals"
   },
   {
     icon: Music,
-    title: "Romantic Music",
-    description: "Soft background melodies to set the perfect mood"
+    title: "City Skyline Views",
+    description: "Rooftop setting with panoramic views of Vadodara under the stars"
   }
 ];
 
 // FAQ items
 const faqs = [
   {
-    question: "What is the location of Friends Factory Cafe?",
-    answer: "Nestled at 424, OneWest, Asopalav W, 4th Floor, Sevasi-Canal Rd, Gotri, Vadodara—your premier rooftop spot for candlelight dinners just minutes from key areas."
+    question: "What makes your candlelight dinner special?",
+    answer: "Our candlelight dinner in Vadodara offers complete privacy on a stunning rooftop with hundreds of real candles, panoramic city views, gourmet multi-course meals, and personalized romantic decorations."
   },
   {
-    question: "How do I book a candlelight dinner or event?",
-    answer: `WhatsApp ${siteConfig.phone} or call directly—share your occasion (anniversary, proposal), date, and guest count for instant confirmation and custom quotes.`
+    question: "Where is your candlelight dinner venue located?",
+    answer: "Our candlelight dinner venue is at 424, OneWest, Asopalav W, 4th Floor, Sevasi-Canal Rd, Gotri, Vadodara—easily accessible from all major areas within 15-20 minutes."
   },
   {
-    question: "What are the starting prices for packages?",
-    answer: "Candlelight dinner packages begin at ₹6500, including rooftop setup, mocktails, flowers, and decor; premium options with photographer add ₹2000+."
+    question: "What's included in candlelight dinner packages?",
+    answer: "All candlelight dinner packages include 3 hours private venue access, romantic decorations with candles & fairy lights, welcome drinks, multi-course dinner, and complimentary cake (select packages)."
   },
   {
-    question: "Can we book for marriage proposals or engagements?",
-    answer: "Absolutely—our rooftop proposal setups feature heart arches, fairy lights, and champagne for unforgettable 'yes' moments in Vadodara."
+    question: "What is the price of candlelight dinner?",
+    answer: "Candlelight dinner packages start from ₹4,700 for basic setup to ₹6,900 for premium rooftop experience with cake included. All packages include food, decorations, and music."
   },
   {
-    question: "What occasions do you host?",
-    answer: "Anniversary celebrations, birthday surprises, proposals, last candlelight dinners before marriage, engagements, pre-wedding shoots, and pregnancy announcements."
+    question: "What time slots are available for candlelight dinner?",
+    answer: "Candlelight dinner slots: Evening 4-7 PM, Dinner 7-10 PM, Late Night 10 PM-1 AM. Weekend slots book fast—advance booking recommended."
   },
   {
-    question: "What time slots are available for rooftop dinners?",
-    answer: "Evenings 6 PM–11 PM; weekends book fast—advance booking recommended for Vadodara's romantic peak hours."
+    question: "Is candlelight dinner venue completely private?",
+    answer: "Yes! Your candlelight dinner is 100% private. The entire rooftop/glass house is exclusively yours—no other guests, no interruptions, just you and your partner."
   },
   {
-    question: "Can we customize decorations and menu?",
-    answer: "Fully customizable—balloons, cakes, themed backdrops, vegan mocktails for your anniversary or pregnancy announcement."
+    question: "Can I customize the candlelight dinner setup?",
+    answer: "Absolutely! Customize your candlelight dinner with specific themes, colors, flower arrangements, personalized messages, and special requests. We tailor everything to your preferences."
   },
   {
-    question: "Is Friends Factory Cafe suitable for small groups or couples only?",
-    answer: "Perfect for 2-3 people; intimate couple setups or family celebrations with private rooftop privacy."
+    question: "What occasions are perfect for candlelight dinner?",
+    answer: "Our candlelight dinner is perfect for anniversaries, birthdays, proposals, date nights, Valentine's Day, and any romantic celebration. We also offer special packages for milestone occasions."
   },
   {
-    question: "Is your venue private and couple-friendly?",
-    answer: "Yes, absolutely! Our venue is exclusively for couples. You'll have complete privacy with no other guests during your booking slot. It's a safe, comfortable, and romantic space."
+    question: "How do I book a candlelight dinner?",
+    answer: `Easy! WhatsApp us at ${siteConfig.phone} or call directly. Share your preferred date, time slot, and any special requests. We'll confirm availability and send you package options.`
   },
   {
-    question: "What is your cancellation policy?",
-    answer: "Rescheduling must be informed at least one day prior. Event can be rescheduled within one month, subject to availability. No Refund Policy Applicable."
+    question: "What is the cancellation policy for candlelight dinner?",
+    answer: "Rescheduling must be informed at least one day prior. Your candlelight dinner booking can be rescheduled within one month, subject to availability. No refunds applicable."
   }
 ];
 
-// Gallery items data - All images and videos with SEO-friendly names
+// Gallery items data - Actual images from packages
 const galleryItems = [
-  // Featured Images
-  { type: 'image', src: '/images/gallery/rooftop-romantic-setup-vadodara-1.jpg', alt: 'Romantic rooftop setup in Vadodara', title: 'Romantic Rooftop', subtitle: 'Premium Package', featured: true },
-  { type: 'image', src: '/images/gallery/romantic-rooftop-candlelight-dinner-vadodara-1.jpg', alt: 'Candlelight dinner in Vadodara', title: 'Candlelight Dinner', featured: false },
-  { type: 'image', src: '/images/gallery/candlelight-dinner-setup-vadodara-1.jpg', alt: 'Romantic dinner setup Vadodara', title: 'Evening Romance', featured: false },
-  { type: 'video', src: '/videos/birthday-celebration-video-vadodara-1.mp4', thumbnail: '/images/video-thumbnails/birthday-celebration-video-vadodara-1-thumb.jpg', alt: 'Birthday celebration video Vadodara', title: 'Birthday Celebration', featured: false },
-  { type: 'image', src: '/images/gallery/birthday-surprise-decoration-vadodara-1.jpg', alt: 'Birthday surprise decoration Vadodara', title: 'Birthday Surprise', featured: false },
-  { type: 'image', src: '/images/gallery/anniversary-celebration-vadodara-1.jpg', alt: 'Anniversary celebration Vadodara', title: 'Anniversary Special', featured: false },
-  { type: 'video', src: '/videos/anniversary-celebration-video-vadodara-1.mp4', thumbnail: '/images/video-thumbnails/anniversary-celebration-video-vadodara-1-thumb.jpg', alt: 'Anniversary celebration video Vadodara', title: 'Anniversary Video', featured: false },
-  { type: 'image', src: '/images/gallery/romantic-table-decoration-vadodara-1.jpg', alt: 'Romantic table decoration Vadodara', title: 'Table Decor', featured: false },
-  { type: 'image', src: '/images/gallery/birthday-balloon-decoration-vadodara-1.jpg', alt: 'Birthday balloon decoration Vadodara', title: 'Balloon Decoration', featured: false },
-  { type: 'image', src: '/images/gallery/anniversary-dinner-setup-vadodara-1.jpg', alt: 'Anniversary dinner setup Vadodara', title: 'Anniversary Dinner', featured: false },
-  { type: 'video', src: '/videos/rooftop-celebration-reel-vadodara-1.mp4', thumbnail: '/images/video-thumbnails/rooftop-celebration-reel-vadodara-1-thumb.jpg', alt: 'Rooftop celebration reel Vadodara', title: 'Rooftop Vibes', featured: false },
-  { type: 'image', src: '/images/gallery/romantic-ambiance-cafe-vadodara-1.jpg', alt: 'Romantic ambiance cafe Vadodara', title: 'Romantic Ambiance', featured: false },
-  { type: 'image', src: '/images/gallery/couple-celebration-vadodara-1.jpg', alt: 'Couple celebration Vadodara', title: 'Couple Moment', featured: false },
-  { type: 'image', src: '/images/gallery/evening-romantic-celebration-vadodara-1.jpg', alt: 'Evening romantic celebration Vadodara', title: 'Evening Magic', featured: false },
-  { type: 'video', src: '/videos/birthday-reel-vadodara-1.mp4', thumbnail: '/images/video-thumbnails/birthday-reel-vadodara-1-thumb.jpg', alt: 'Birthday reel Vadodara', title: 'Birthday Reel', featured: false },
-  { type: 'image', src: '/images/gallery/glass-house-dinner-vadodara-1.jpg', alt: 'Glass house dinner Vadodara', title: 'Glass House', featured: false },
-  { type: 'image', src: '/images/gallery/night-romantic-setup-vadodara-1.jpg', alt: 'Night romantic setup Vadodara', title: 'Night Setup', featured: false },
-  { type: 'video', src: '/videos/romantic-moments-reel-vadodara-1.mp4', thumbnail: '/images/video-thumbnails/romantic-moments-reel-vadodara-1-thumb.jpg', alt: 'Romantic moments reel Vadodara', title: 'Romantic Reel', featured: false },
-  { type: 'image', src: '/images/gallery/proposal-setup-vadodara-1.jpg', alt: 'Proposal setup Vadodara', title: 'Proposal Setup', featured: false },
-  { type: 'image', src: '/images/gallery/day-celebration-vadodara-1.jpg', alt: 'Day celebration Vadodara', title: 'Day Celebration', featured: false },
-  { type: 'video', src: '/videos/anniversary-dinner-video-vadodara-1.mp4', thumbnail: '/images/video-thumbnails/anniversary-dinner-video-vadodara-1-thumb.jpg', alt: 'Anniversary dinner video Vadodara', title: 'Anniversary Moments', featured: false },
-  { type: 'image', src: '/images/gallery/surprise-party-vadodara-1.jpg', alt: 'Surprise party Vadodara', title: 'Surprise Party', featured: false },
-  { type: 'image', src: '/images/gallery/romantic-dinner-date-vadodara-1.jpg', alt: 'Romantic dinner date Vadodara', title: 'Dinner Date', featured: false },
-  { type: 'video', src: '/videos/birthday-surprise-video-vadodara-1.mp4', thumbnail: '/images/video-thumbnails/birthday-surprise-video-vadodara-1-thumb.jpg', alt: 'Birthday surprise video Vadodara', title: 'Birthday Surprise', featured: false },
-  { type: 'image', src: '/images/gallery/valentines-day-celebration-vadodara-1.jpg', alt: 'Valentines day celebration Vadodara', title: 'Valentine Setup', featured: false },
-  { type: 'image', src: '/images/gallery/valentines-dinner-vadodara-1.jpg', alt: 'Valentines dinner Vadodara', title: 'Valentine Dinner', featured: false },
-  { type: 'video', src: '/videos/valentines-celebration-video-vadodara-1.mp4', thumbnail: '/images/video-thumbnails/valentines-celebration-video-vadodara-1-thumb.jpg', alt: 'Valentines celebration video Vadodara', title: 'Valentine Video', featured: false },
-  { type: 'image', src: '/images/gallery/valentines-romantic-setup-vadodara-1.jpg', alt: 'Valentines romantic setup Vadodara', title: 'Valentine Romance', featured: false },
-  { type: 'image', src: '/images/gallery/birthday-surprise-for-girlfriend-vadodara-1.jpg', alt: 'Birthday surprise for girlfriend Vadodara', title: 'Girlfriend Surprise', featured: false },
-  { type: 'video', src: '/videos/baby-moments-video-vadodara-1.mp4', thumbnail: '/images/video-thumbnails/baby-moments-video-vadodara-1-thumb.jpg', alt: 'Baby moments video Vadodara', title: 'Baby Moments', featured: false },
-  { type: 'image', src: '/images/gallery/birthday-surprise-for-boyfriend-vadodara-1.jpg', alt: 'Birthday surprise for boyfriend Vadodara', title: 'Boyfriend Surprise', featured: false },
-  { type: 'image', src: '/images/gallery/birthday-room-decoration-vadodara-1.jpg', alt: 'Birthday room decoration Vadodara', title: 'Room Decoration', featured: false },
-  { type: 'video', src: '/videos/pre-wedding-couple-video-vadodara-1.mp4', thumbnail: '/images/video-thumbnails/pre-wedding-couple-video-vadodara-1-thumb.jpg', alt: 'Pre-wedding couple video Vadodara', title: 'Pre-Wedding Video', featured: false },
-  { type: 'image', src: '/images/gallery/couple-birthday-party-vadodara-1.jpg', alt: 'Couple birthday party Vadodara', title: 'Birthday Party', featured: false },
-  { type: 'image', src: '/images/gallery/surprise-date-vadodara-1.jpg', alt: 'Surprise date Vadodara', title: 'Surprise Date', featured: false },
-  { type: 'video', src: '/videos/pre-wedding-shoot-video-vadodara-1.mp4', thumbnail: '/images/video-thumbnails/pre-wedding-shoot-video-vadodara-1-thumb.jpg', alt: 'Pre-wedding shoot video Vadodara', title: 'Pre-Wedding Shoot', featured: false },
-  { type: 'image', src: '/images/gallery/couple-moment-vadodara-1.jpg', alt: 'Couple moment Vadodara', title: 'Couple Moment', featured: false },
-  { type: 'image', src: '/images/gallery/pre-wedding-photoshoot-vadodara-1.jpg', alt: 'Pre-wedding photoshoot Vadodara', title: 'Pre-Wedding Photo', featured: false },
-  { type: 'video', src: '/videos/romantic-dinner-video-vadodara-1.mp4', thumbnail: '/images/video-thumbnails/romantic-dinner-video-vadodara-1-thumb.jpg', alt: 'Romantic dinner video Vadodara', title: 'Romantic Dinner', featured: false },
-  { type: 'image', src: '/images/gallery/pre-wedding-shoot-vadodara-1.jpg', alt: 'Pre-wedding shoot Vadodara', title: 'Photo Shoot', featured: false },
-  { type: 'image', src: '/images/gallery/baby-shower-decoration-vadodara-1.jpg', alt: 'Baby shower decoration Vadodara', title: 'Baby Shower', featured: false },
-  { type: 'video', src: '/videos/proposal-video-vadodara-1.mp4', thumbnail: '/images/video-thumbnails/proposal-video-vadodara-1-thumb.jpg', alt: 'Proposal video Vadodara', title: 'Proposal Video', featured: false },
-  { type: 'image', src: '/images/gallery/baby-moments-celebration-vadodara-1.jpg', alt: 'Baby moments celebration Vadodara', title: 'Baby Moments', featured: false },
-  { type: 'image', src: '/images/gallery/candlelight-dinner-for-couples-vadodara-1.jpg', alt: 'Candlelight dinner for couples Vadodara', title: 'Couple Dinner', featured: false },
-  { type: 'video', src: '/videos/couple-celebration-video-vadodara-1.mp4', thumbnail: '/images/video-thumbnails/couple-celebration-video-vadodara-1-thumb.jpg', alt: 'Couple celebration video Vadodara', title: 'Celebration Video', featured: false },
-  { type: 'image', src: '/images/gallery/rooftop-dinner-vadodara-1.jpg', alt: 'Rooftop dinner Vadodara', title: 'Rooftop Dinner', featured: false },
-  { type: 'image', src: '/images/gallery/private-dining-vadodara-1.jpg', alt: 'Private dining Vadodara', title: 'Private Dining', featured: false },
-  { type: 'image', src: '/images/gallery/romantic-venue-vadodara-1.jpg', alt: 'Romantic venue Vadodara', title: 'Romantic Venue', featured: false },
-  { type: 'image', src: '/images/gallery/celebration-venue-vadodara-1.jpg', alt: 'Celebration venue Vadodara', title: 'Celebration Venue', featured: false },
+  // Featured Images - Best wide shots
+  { type: 'image', src: '/packages/forever-us-loveframe-rooftop/images/2.png', alt: 'Romantic rooftop candlelight dinner setup Vadodara', title: 'Romantic Rooftop', subtitle: 'Premium Package', featured: true },
+  { type: 'image', src: '/packages/eternal-love-rooftop-celebration/images/21.png', alt: 'Eternal love rooftop celebration Vadodara', title: 'Candlelight Dinner', featured: false },
+  { type: 'image', src: '/packages/golden-promise-glass-house/images/52.png', alt: 'Golden promise glass house dinner Vadodara', title: 'Glass House', featured: false },
+  { type: 'video', src: '/images/gallery/1000330060.mp4', thumbnail: '/packages/thumbnails/forever-us-loveframe-rooftop.png', alt: 'Romantic celebration video Vadodara', title: 'Celebration Video', featured: false },
+  { type: 'image', src: '/packages/forever-us-loveframe-rooftop/images/5.png', alt: 'Candlelight dinner setup Vadodara', title: 'Evening Romance', featured: false },
+  { type: 'image', src: '/packages/eternal-love-rooftop-celebration/images/25.png', alt: 'Anniversary celebration Vadodara', title: 'Anniversary Special', featured: false },
+  { type: 'video', src: '/images/gallery/VID_20241205_201217.mp4', thumbnail: '/packages/thumbnails/eternal-love-rooftop-celebration.png', alt: 'Anniversary celebration video Vadodara', title: 'Anniversary Video', featured: false },
+  { type: 'image', src: '/packages/golden-promise-glass-house/images/55.png', alt: 'Romantic table decoration Vadodara', title: 'Table Decor', featured: false },
+  { type: 'image', src: '/packages/forever-us-loveframe-rooftop/images/8.png', alt: 'Balloon decoration Vadodara', title: 'Balloon Setup', featured: false },
+  { type: 'image', src: '/packages/moonlit-romance-experience/images/24.png', alt: 'Moonlit dinner setup Vadodara', title: 'Moonlit Romance', featured: false },
+  { type: 'video', src: '/images/gallery/VID_20251108_200434508.mp4', thumbnail: '/packages/thumbnails/golden-promise-glass-house.png', alt: 'Rooftop celebration reel Vadodara', title: 'Rooftop Vibes', featured: false },
+  { type: 'image', src: '/packages/the-promise-creative-area/images/2.png', alt: 'Creative area celebration Vadodara', title: 'Creative Setup', featured: false },
+  { type: 'image', src: '/packages/eternal-love-rooftop-celebration/images/30.png', alt: 'Couple celebration Vadodara', title: 'Couple Moment', featured: false },
+  { type: 'image', src: '/packages/forever-us-loveframe-rooftop/images/10.png', alt: 'Evening romantic celebration Vadodara', title: 'Evening Magic', featured: false },
+  { type: 'video', src: '/images/gallery/VID-20250512-WA0007.mp4', thumbnail: '/packages/thumbnails/moonlit-romance-experience.png', alt: 'Birthday reel Vadodara', title: 'Birthday Reel', featured: false },
+  { type: 'image', src: '/packages/golden-promise-glass-house/images/60.png', alt: 'Glass house dinner Vadodara', title: 'Glass House', featured: false },
+  { type: 'image', src: '/packages/moonlit-romance-experience/images/28.png', alt: 'Night romantic setup Vadodara', title: 'Night Setup', featured: false },
+  { type: 'image', src: '/packages/the-promise-creative-area/images/6.png', alt: 'Proposal setup Vadodara', title: 'Proposal Setup', featured: false },
+  { type: 'image', src: '/packages/eternal-love-rooftop-celebration/images/35.png', alt: 'Day celebration Vadodara', title: 'Day Celebration', featured: false },
+  { type: 'image', src: '/packages/forever-us-loveframe-rooftop/images/12.png', alt: 'Surprise party Vadodara', title: 'Surprise Party', featured: false },
+  { type: 'image', src: '/packages/golden-promise-glass-house/images/65.png', alt: 'Romantic dinner date Vadodara', title: 'Dinner Date', featured: false },
+  { type: 'image', src: '/packages/moonlit-romance-experience/images/32.png', alt: 'Valentine setup Vadodara', title: 'Valentine Setup', featured: false },
+  { type: 'image', src: '/packages/the-promise-creative-area/images/10.png', alt: 'Valentine dinner Vadodara', title: 'Valentine Dinner', featured: false },
+  { type: 'image', src: '/packages/eternal-love-rooftop-celebration/images/40.png', alt: 'Valentine romance Vadodara', title: 'Valentine Romance', featured: false },
+  { type: 'image', src: '/packages/forever-us-loveframe-rooftop/images/15.png', alt: 'Girlfriend surprise Vadodara', title: 'Surprise Setup', featured: false },
+  { type: 'image', src: '/packages/golden-promise-glass-house/images/70.png', alt: 'Boyfriend surprise Vadodara', title: 'Special Moment', featured: false },
+  { type: 'image', src: '/packages/moonlit-romance-experience/images/35.png', alt: 'Room decoration Vadodara', title: 'Room Decoration', featured: false },
+  { type: 'image', src: '/packages/the-promise-creative-area/images/14.png', alt: 'Birthday party Vadodara', title: 'Birthday Party', featured: false },
+  { type: 'image', src: '/packages/eternal-love-rooftop-celebration/images/45.png', alt: 'Surprise date Vadodara', title: 'Surprise Date', featured: false },
+  { type: 'image', src: '/packages/forever-us-loveframe-rooftop/images/18.png', alt: 'Couple moment Vadodara', title: 'Couple Moment', featured: false },
+  { type: 'image', src: '/packages/golden-promise-glass-house/images/58.png', alt: 'Candlelight dinner for couples Vadodara', title: 'Couple Dinner', featured: false },
+  { type: 'image', src: '/packages/the-promise-creative-area/images/18.png', alt: 'Rooftop dinner Vadodara', title: 'Rooftop Dinner', featured: false },
+  { type: 'image', src: '/packages/eternal-love-rooftop-celebration/images/28.png', alt: 'Private dining Vadodara', title: 'Private Dining', featured: false },
+  { type: 'image', src: '/packages/moonlit-romance-experience/images/30.png', alt: 'Romantic venue Vadodara', title: 'Romantic Venue', featured: false },
+  { type: 'image', src: '/packages/golden-promise-glass-house/images/68.png', alt: 'Celebration venue Vadodara', title: 'Celebration Venue', featured: false },
+  { type: 'image', src: '/packages/forever-us-loveframe-rooftop/images/7.png', alt: 'Fairy lights decoration Vadodara', title: 'Fairy Lights', featured: false },
 ];
 
 // Gallery Section Component
@@ -153,17 +140,17 @@ function GallerySection() {
   const videoCount = galleryItems.filter(item => item.type === 'video').length;
 
   return (
-    <section className="py-20 bg-gradient-to-br from-amber-50 via-white to-orange-50">
+    <section className="py-20 bg-gradient-to-br from-rose-50 via-white to-pink-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
-          <Badge className="mb-4 bg-amber-100 text-amber-700 border-amber-200">
+          <Badge className="mb-4 bg-rose-100 text-rose-900 border-rose-200">
             <ImageIcon className="h-4 w-4 mr-2" /> Our Gallery
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif">
-            Magical Moments at Friends Factory
+            Candlelight Dinner Gallery
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            A glimpse into the romantic experiences we create for couples. Every setup is designed to make your moments unforgettable.
+            A glimpse into our stunning candlelight dinner setups. Every detail is designed to create unforgettable romantic moments.
           </p>
         </div>
 
@@ -173,8 +160,8 @@ function GallerySection() {
             variant={activeFilter === 'all' ? 'default' : 'outline'}
             onClick={() => setActiveFilter('all')}
             className={activeFilter === 'all' 
-              ? 'bg-amber-500 hover:bg-amber-600 text-white' 
-              : 'border-amber-300 text-amber-700 hover:bg-amber-50'}
+              ? 'bg-rose-700 hover:bg-rose-800 text-white' 
+              : 'border-rose-300 text-rose-900 hover:bg-rose-50'}
           >
             <Sparkles className="h-4 w-4 mr-2" />
             All ({galleryItems.length})
@@ -183,8 +170,8 @@ function GallerySection() {
             variant={activeFilter === 'photos' ? 'default' : 'outline'}
             onClick={() => setActiveFilter('photos')}
             className={activeFilter === 'photos' 
-              ? 'bg-amber-500 hover:bg-amber-600 text-white' 
-              : 'border-amber-300 text-amber-700 hover:bg-amber-50'}
+              ? 'bg-rose-700 hover:bg-rose-800 text-white' 
+              : 'border-rose-300 text-rose-900 hover:bg-rose-50'}
           >
             <ImageIcon className="h-4 w-4 mr-2" />
             Photos ({photoCount})
@@ -193,8 +180,8 @@ function GallerySection() {
             variant={activeFilter === 'videos' ? 'default' : 'outline'}
             onClick={() => setActiveFilter('videos')}
             className={activeFilter === 'videos' 
-              ? 'bg-amber-500 hover:bg-amber-600 text-white' 
-              : 'border-amber-300 text-amber-700 hover:bg-amber-50'}
+              ? 'bg-rose-700 hover:bg-rose-800 text-white' 
+              : 'border-rose-300 text-rose-900 hover:bg-rose-50'}
           >
             <Play className="h-4 w-4 mr-2" />
             Videos ({videoCount})
@@ -241,7 +228,7 @@ function GallerySection() {
                   />
                   <div className="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/10 transition-colors">
                     <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Play className="h-5 w-5 text-amber-600 ml-1" fill="currentColor" />
+                      <Play className="h-5 w-5 text-rose-800 ml-1" fill="currentColor" />
                     </div>
                   </div>
                   <div className="absolute bottom-3 left-3 text-white opacity-0 group-hover:opacity-100 transition-opacity">
@@ -256,7 +243,7 @@ function GallerySection() {
         {/* View More Button */}
         <div className="text-center mt-10">
           <Link href="/virtual-tour">
-            <Button className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-6 text-lg">
+            <Button className="bg-gradient-to-r from-rose-700 to-rose-600 hover:from-rose-800 hover:to-rose-700 text-white px-8 py-6 text-lg">
               <Camera className="h-5 w-5 mr-2" />
               View Virtual Tour
               <ArrowRight className="h-5 w-5 ml-2" />
@@ -276,14 +263,14 @@ function BlogSection() {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <Badge className="mb-4 bg-amber-100 text-amber-700 border-amber-200">
+          <Badge className="mb-4 bg-rose-100 text-rose-900 border-rose-200">
             Our Blog
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif">
-            Celebration Ideas & Inspiration
+            Candlelight Dinner Ideas & Tips
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Tips, guides, and ideas to help you plan the perfect celebration in Vadodara
+            Tips, guides, and inspiration to plan the perfect candlelight dinner in Vadodara
           </p>
         </div>
 
@@ -291,7 +278,7 @@ function BlogSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
           {posts.map((post) => (
             <Link key={post.slug} href={`/blog/${post.slug}`}>
-              <Card className="overflow-hidden h-full hover:shadow-lg transition-all duration-300 group border-amber-100">
+              <Card className="overflow-hidden h-full hover:shadow-lg transition-all duration-300 group border-rose-100">
                 <div className="relative h-48">
                   <Image
                     src={post.coverImage}
@@ -299,12 +286,12 @@ function BlogSection() {
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <Badge className="absolute top-3 left-3 bg-amber-500 text-white">
+                  <Badge className="absolute top-3 left-3 bg-rose-500 text-white">
                     {post.category}
                   </Badge>
                 </div>
                 <CardContent className="p-5">
-                  <h3 className="font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-amber-600 transition-colors">
+                  <h3 className="font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-rose-800 transition-colors">
                     {post.title}
                   </h3>
                   <p className="text-sm text-gray-600 mb-4 line-clamp-2">
@@ -332,7 +319,7 @@ function BlogSection() {
         {/* View More Button */}
         <div className="text-center">
           <Link href="/blog">
-            <Button className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-6 text-lg">
+            <Button className="bg-gradient-to-r from-rose-700 to-rose-600 hover:from-rose-800 hover:to-rose-700 text-white px-8 py-6 text-lg">
               View More Articles
               <ArrowRight className="h-5 w-5 ml-2" />
             </Button>
@@ -347,10 +334,13 @@ export default function FFCHomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const reviewsRef = useRef<HTMLDivElement>(null);
   
-  // Hero slider images
+  // Hero slider images - Best wide shots from packages
   const heroSlides = [
-    { src: '/images/hero-slider/Slide1.png', alt: 'Romantic Candlelight Dinner Setup at Friends Factory Cafe Vadodara' },
-    { src: '/images/hero-slider/Slide2.png', alt: 'Rooftop Celebration Setup with Fairy Lights Vadodara' },
+    { src: '/packages/forever-us-loveframe-rooftop/images/2.png', alt: 'Romantic Candlelight Dinner Setup at Friends Factory Cafe Vadodara' },
+    { src: '/packages/eternal-love-rooftop-celebration/images/21.png', alt: 'Rooftop Celebration Setup with Fairy Lights Vadodara' },
+    { src: '/packages/golden-promise-glass-house/images/52.png', alt: 'Glass House Romantic Dinner Vadodara' },
+    { src: '/packages/moonlit-romance-experience/images/24.png', alt: 'Moonlit Romance Experience Vadodara' },
+    { src: '/packages/the-promise-creative-area/images/2.png', alt: 'Creative Area Celebration Setup Vadodara' },
   ];
 
   // Auto-slide effect
@@ -377,7 +367,7 @@ export default function FFCHomePage() {
       <FFCHeader />
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-amber-600 via-orange-500 to-amber-700 text-white overflow-hidden">
+      <section className="relative bg-gradient-to-br from-rose-800 via-pink-500 to-rose-900 text-white overflow-hidden">
         {/* Background Image Slider */}
         <div className="absolute inset-0">
           {heroSlides.map((slide, index) => (
@@ -417,21 +407,21 @@ export default function FFCHomePage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
               <Badge className="mb-6 bg-white/20 text-white border-white/30 text-sm px-4 py-1">
-                <Sparkles className="h-4 w-4 mr-2" /> Couples Only Experience in Vadodara
+                <Sparkles className="h-4 w-4 mr-2" /> #1 Candlelight Dinner in Vadodara
               </Badge>
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight font-serif">
-                Friends Factory Cafe
+                Candlelight Dinner Vadodara
               </h1>
               <p className="text-xl md:text-2xl mb-4 text-white/90 max-w-2xl">
                 {siteConfig.tagline}
               </p>
               <p className="text-lg mb-8 text-white/80 max-w-xl">
-                Premium romantic celebration venue for couples. Birthday surprises, candlelight dinners, anniversaries, proposals & more.
+                Private rooftop candlelight dining with stunning city views, gourmet cuisine, romantic decorations & unforgettable memories.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link href="/packages">
-                  <Button size="lg" className="bg-white text-amber-600 hover:bg-amber-50 text-lg px-8 py-6 w-full sm:w-auto">
+                  <Button size="lg" className="bg-white text-rose-800 hover:bg-rose-50 text-lg px-8 py-6 w-full sm:w-auto">
                     <Gift className="h-5 w-5 mr-2" />
                     View Packages
                   </Button>
@@ -466,50 +456,50 @@ export default function FFCHomePage() {
       </section>
 
       {/* Mobile Booking Form */}
-      <section className="lg:hidden bg-amber-50 py-8">
+      <section className="lg:hidden bg-rose-50 py-8">
         <div className="container mx-auto px-4">
           <FFCBookingForm />
         </div>
       </section>
 
       {/* Packages Section */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-amber-50 to-white">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-rose-50 to-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 md:mb-16">
-            <Badge className="mb-4 bg-amber-100 text-amber-700 border-amber-200">
+            <Badge className="mb-4 bg-rose-100 text-rose-900 border-rose-200">
               Our Packages
             </Badge>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 font-serif">
-              Our Romantic Celebration Packages
+              Candlelight Dinner Packages
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
-              8 unique romantic setups designed to make your celebration unforgettable
+              8 unique candlelight dinner setups designed for unforgettable romantic evenings
             </p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
             {packages.map((pkg, index) => (
               <Link key={pkg.id} href={`/packages/${pkg.slug}`}>
-                <Card className="h-full hover:shadow-xl transition-all hover:-translate-y-1 border-amber-100 group overflow-hidden">
-                  <div className="aspect-square bg-gradient-to-br from-amber-100 to-orange-100 relative overflow-hidden">
+                <Card className="h-full hover:shadow-xl transition-all hover:-translate-y-1 border-rose-100 group overflow-hidden">
+                  <div className="aspect-square bg-gradient-to-br from-rose-100 to-pink-100 relative overflow-hidden">
                     <Image
                       src={pkg.thumbnail}
                       alt={pkg.name}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
-                    <Badge className="absolute top-2 left-2 bg-amber-600 text-white text-xs">
+                    <Badge className="absolute top-2 left-2 bg-rose-800 text-white text-xs">
                       Setup {index + 1}
                     </Badge>
                   </div>
                   <CardContent className="p-2 md:p-4">
-                    <h3 className="font-semibold text-sm md:text-lg mb-1 group-hover:text-amber-600 transition-colors line-clamp-2">
+                    <h3 className="font-semibold text-sm md:text-lg mb-1 group-hover:text-rose-800 transition-colors line-clamp-2">
                       {pkg.name}
                     </h3>
                     <p className="text-gray-600 text-xs md:text-sm line-clamp-2 mb-2 hidden md:block">
                       {pkg.shortDescription}
                     </p>
-                    <p className="text-base md:text-xl font-bold text-amber-600">
+                    <p className="text-base md:text-xl font-bold text-rose-800">
                       {formatPrice(pkg.price)}
                     </p>
                   </CardContent>
@@ -520,43 +510,10 @@ export default function FFCHomePage() {
           
           <div className="text-center mt-6 md:mt-10">
             <Link href="/packages">
-              <Button size="lg" className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white">
+              <Button size="lg" className="bg-gradient-to-r from-rose-800 to-rose-700 hover:from-rose-900 hover:to-orange-700 text-white">
                 View All Packages <ArrowRight className="h-5 w-5 ml-2" />
               </Button>
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <Badge className="mb-4 bg-amber-100 text-amber-700 border-amber-200">
-              Our Services
-            </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif">
-              Perfect For Every Celebration
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              From intimate candlelight dinners to grand proposals, we create magical moments for every special occasion.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            {serviceCategories.map((service) => (
-              <Card key={service.slug} className="h-full border-amber-100">
-                <CardContent className="p-4 md:p-6 text-center">
-                  <div className="text-3xl md:text-4xl mb-3 md:mb-4">{service.emoji}</div>
-                  <h3 className="font-semibold text-sm md:text-lg mb-1 md:mb-2 line-clamp-2">
-                    {service.name}
-                  </h3>
-                  <p className="text-gray-600 text-xs md:text-sm line-clamp-2 hidden md:block">
-                    {service.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </section>
@@ -565,19 +522,19 @@ export default function FFCHomePage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-amber-100 text-amber-700 border-amber-200">
-              What You Get
+            <Badge className="mb-4 bg-rose-100 text-rose-900 border-rose-200">
+              What's Included
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif">
-              The Complete Experience
+              The Candlelight Dinner Experience
             </h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {experienceFeatures.map((feature, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 rounded-full bg-amber-100 flex items-center justify-center mx-auto mb-4">
-                  <feature.icon className="h-8 w-8 text-amber-600" />
+                <div className="w-16 h-16 rounded-full bg-rose-100 flex items-center justify-center mx-auto mb-4">
+                  <feature.icon className="h-8 w-8 text-rose-800" />
                 </div>
                 <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
                 <p className="text-gray-600 text-sm">{feature.description}</p>
@@ -592,7 +549,7 @@ export default function FFCHomePage() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <Badge className="mb-4 bg-amber-500/20 text-amber-400 border-amber-500/30">
+              <Badge className="mb-4 bg-rose-500/20 text-rose-400 border-rose-500/30">
                 Our Menu
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 font-serif">
@@ -604,8 +561,8 @@ export default function FFCHomePage() {
               
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0">
-                    <Wine className="h-5 w-5 text-amber-400" />
+                  <div className="w-10 h-10 rounded-full bg-rose-500/20 flex items-center justify-center flex-shrink-0">
+                    <Wine className="h-5 w-5 text-rose-400" />
                   </div>
                   <div>
                     <h4 className="font-semibold">Welcome Drink</h4>
@@ -614,8 +571,8 @@ export default function FFCHomePage() {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0">
-                    <Utensils className="h-5 w-5 text-amber-400" />
+                  <div className="w-10 h-10 rounded-full bg-rose-500/20 flex items-center justify-center flex-shrink-0">
+                    <Utensils className="h-5 w-5 text-rose-400" />
                   </div>
                   <div>
                     <h4 className="font-semibold">Cheese Fondue</h4>
@@ -624,8 +581,8 @@ export default function FFCHomePage() {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0">
-                    <Gift className="h-5 w-5 text-amber-400" />
+                  <div className="w-10 h-10 rounded-full bg-rose-500/20 flex items-center justify-center flex-shrink-0">
+                    <Gift className="h-5 w-5 text-rose-400" />
                   </div>
                   <div>
                     <h4 className="font-semibold">Dessert with Chocolate Bite</h4>
@@ -635,7 +592,7 @@ export default function FFCHomePage() {
               </div>
               
               <Link href="/menu" className="inline-block mt-8">
-                <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white">
+                <Button size="lg" className="bg-rose-700 hover:bg-rose-800 text-white">
                   View Full Menu <ArrowRight className="h-5 w-5 ml-2" />
                 </Button>
               </Link>
@@ -657,17 +614,17 @@ export default function FFCHomePage() {
       </section>
 
       {/* Areas We Serve */}
-      <section className="py-20 bg-amber-50">
+      <section className="py-20 bg-rose-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-amber-100 text-amber-700 border-amber-200">
-              <MapPin className="h-4 w-4 mr-2" /> Areas We Serve
+            <Badge className="mb-4 bg-rose-100 text-rose-900 border-rose-200">
+              <MapPin className="h-4 w-4 mr-2" /> Candlelight Dinner Near You
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif">
-              Serving All of Vadodara
+              Candlelight Dinner in Vadodara
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              We bring romantic celebrations to couples across all areas of Vadodara
+              We bring romantic candlelight dinner experiences to couples across all areas of Vadodara
             </p>
           </div>
           
@@ -676,7 +633,7 @@ export default function FFCHomePage() {
               <Link 
                 key={area.slug}
                 href={`/${area.slug}`}
-                className="px-4 py-2 bg-white rounded-full text-gray-700 hover:bg-amber-600 hover:text-white transition-colors border border-amber-200"
+                className="px-4 py-2 bg-white rounded-full text-gray-700 hover:bg-rose-800 hover:text-white transition-colors border border-rose-200"
               >
                 {area.name}
               </Link>
@@ -686,12 +643,12 @@ export default function FFCHomePage() {
       </section>
 
       {/* Google Reviews Slider */}
-      <section className="py-16 md:py-20 bg-amber-50 overflow-hidden">
+      <section className="py-16 md:py-20 bg-rose-50 overflow-hidden">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold font-serif mb-2">
-                Our Love Stories Shine (Testimonials)
+                Candlelight Dinner Reviews
               </h2>
             </div>
             <a 
@@ -716,7 +673,7 @@ export default function FFCHomePage() {
               <p className="text-base font-bold text-gray-800 mb-2">EXCELLENT</p>
               <div className="flex gap-0.5 mb-2">
                 {[1, 2, 3, 4, 5].map((star) => (
-                  <Star key={star} className="h-5 w-5 fill-amber-400 text-amber-400" />
+                  <Star key={star} className="h-5 w-5 fill-rose-400 text-rose-400" />
                 ))}
               </div>
               <p className="text-gray-600 text-sm mb-3">Based on <strong>1256 reviews</strong></p>
@@ -770,7 +727,7 @@ export default function FFCHomePage() {
                       </svg>
                     </div>
                     <div className="flex gap-0.5 mb-2">
-                      {[1, 2, 3, 4, 5].map((star) => (<Star key={star} className="h-3 w-3 fill-amber-400 text-amber-400" />))}
+                      {[1, 2, 3, 4, 5].map((star) => (<Star key={star} className="h-3 w-3 fill-rose-400 text-rose-400" />))}
                       <span className="ml-1 text-cyan-500 text-xs">✓</span>
                     </div>
                     <p className="text-gray-600 text-xs leading-relaxed line-clamp-3">Such a great time!!!! Thanks to my hubby and the team of friends factory cafe!!!</p>
@@ -794,7 +751,7 @@ export default function FFCHomePage() {
                       </svg>
                     </div>
                     <div className="flex gap-0.5 mb-2">
-                      {[1, 2, 3, 4, 5].map((star) => (<Star key={star} className="h-3 w-3 fill-amber-400 text-amber-400" />))}
+                      {[1, 2, 3, 4, 5].map((star) => (<Star key={star} className="h-3 w-3 fill-rose-400 text-rose-400" />))}
                       <span className="ml-1 text-cyan-500 text-xs">✓</span>
                     </div>
                     <p className="text-gray-600 text-xs leading-relaxed line-clamp-3">The place was calm and peace, food was awesome, will be back soon 🍽️</p>
@@ -818,7 +775,7 @@ export default function FFCHomePage() {
                       </svg>
                     </div>
                     <div className="flex gap-0.5 mb-2">
-                      {[1, 2, 3, 4, 5].map((star) => (<Star key={star} className="h-3 w-3 fill-amber-400 text-amber-400" />))}
+                      {[1, 2, 3, 4, 5].map((star) => (<Star key={star} className="h-3 w-3 fill-rose-400 text-rose-400" />))}
                       <span className="ml-1 text-cyan-500 text-xs">✓</span>
                     </div>
                     <p className="text-gray-600 text-xs leading-relaxed line-clamp-3">Cutest set up and amazing food service.</p>
@@ -842,7 +799,7 @@ export default function FFCHomePage() {
                       </svg>
                     </div>
                     <div className="flex gap-0.5 mb-2">
-                      {[1, 2, 3, 4, 5].map((star) => (<Star key={star} className="h-3 w-3 fill-amber-400 text-amber-400" />))}
+                      {[1, 2, 3, 4, 5].map((star) => (<Star key={star} className="h-3 w-3 fill-rose-400 text-rose-400" />))}
                       <span className="ml-1 text-cyan-500 text-xs">✓</span>
                     </div>
                     <p className="text-gray-600 text-xs leading-relaxed line-clamp-3">Best candlelight dinner experience in Vadodara! The decoration was stunning. Proposed here and she said YES! 💍</p>
@@ -866,7 +823,7 @@ export default function FFCHomePage() {
                       </svg>
                     </div>
                     <div className="flex gap-0.5 mb-2">
-                      {[1, 2, 3, 4, 5].map((star) => (<Star key={star} className="h-3 w-3 fill-amber-400 text-amber-400" />))}
+                      {[1, 2, 3, 4, 5].map((star) => (<Star key={star} className="h-3 w-3 fill-rose-400 text-rose-400" />))}
                       <span className="ml-1 text-cyan-500 text-xs">✓</span>
                     </div>
                     <p className="text-gray-600 text-xs leading-relaxed line-clamp-3">My husband surprised me here for our anniversary. The rooftop setup was magical! Highly recommend! ❤️</p>
@@ -890,7 +847,7 @@ export default function FFCHomePage() {
                       </svg>
                     </div>
                     <div className="flex gap-0.5 mb-2">
-                      {[1, 2, 3, 4, 5].map((star) => (<Star key={star} className="h-3 w-3 fill-amber-400 text-amber-400" />))}
+                      {[1, 2, 3, 4, 5].map((star) => (<Star key={star} className="h-3 w-3 fill-rose-400 text-rose-400" />))}
                       <span className="ml-1 text-cyan-500 text-xs">✓</span>
                     </div>
                     <p className="text-gray-600 text-xs leading-relaxed line-clamp-3">Best place for couples in Vadodara! Booked for my wife's birthday. Glass house setup was Instagram-perfect!</p>
@@ -914,20 +871,20 @@ export default function FFCHomePage() {
       <BlogSection />
 
       {/* FAQ Section */}
-      <section className="py-20 bg-amber-50">
+      <section className="py-20 bg-rose-50">
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-amber-100 text-amber-700 border-amber-200">
+            <Badge className="mb-4 bg-rose-100 text-rose-900 border-rose-200">
               FAQ
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif">
-              Frequently Asked Questions
+              Candlelight Dinner FAQs
             </h2>
           </div>
           
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`faq-${index}`} className="bg-white rounded-lg border border-amber-100 px-6">
+              <AccordionItem key={index} value={`faq-${index}`} className="bg-white rounded-lg border border-rose-100 px-6">
                 <AccordionTrigger className="text-left font-medium hover:no-underline">
                   {faq.question}
                 </AccordionTrigger>
@@ -941,13 +898,13 @@ export default function FFCHomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-amber-600 to-orange-600 text-white">
+      <section className="py-20 bg-gradient-to-r from-rose-800 to-rose-700 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif">
-            Ready to Create Unforgettable Memories?
+            Book Your Candlelight Dinner Today
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Book your romantic celebration today and let us make your special moments truly magical
+            Create unforgettable romantic memories with our private candlelight dinner experience in Vadodara
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={`https://wa.me/${siteConfig.whatsapp}`} target="_blank" rel="noopener noreferrer">

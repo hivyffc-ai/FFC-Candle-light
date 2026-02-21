@@ -32,9 +32,9 @@ export default function FFCBlogPostPage({ post }: FFCBlogPostPageProps) {
       <div className="pt-20 bg-gray-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center gap-2 text-sm text-gray-600">
-            <Link href="/" className="hover:text-amber-600">Home</Link>
+            <Link href="/" className="hover:text-rose-800">Home</Link>
             <span>/</span>
-            <Link href="/blog" className="hover:text-amber-600">Blog</Link>
+            <Link href="/blog" className="hover:text-rose-800">Blog</Link>
             <span>/</span>
             <span className="text-gray-900 truncate max-w-[200px]">{post.title}</span>
           </div>
@@ -47,7 +47,7 @@ export default function FFCBlogPostPage({ post }: FFCBlogPostPageProps) {
           <div className="max-w-4xl mx-auto">
             {/* Category & Meta */}
             <div className="flex flex-wrap items-center gap-4 mb-6">
-              <Badge className="bg-amber-100 text-amber-800">
+              <Badge className="bg-rose-100 text-rose-950">
                 {post.category}
               </Badge>
               <span className="flex items-center gap-1 text-sm text-gray-500">
@@ -86,7 +86,7 @@ export default function FFCBlogPostPage({ post }: FFCBlogPostPageProps) {
             </div>
 
             {/* Article Content */}
-            <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-amber-600 prose-strong:text-gray-900">
+            <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-rose-800 prose-strong:text-gray-900">
               <div dangerouslySetInnerHTML={{ __html: articleContent }} />
             </div>
 
@@ -101,7 +101,7 @@ export default function FFCBlogPostPage({ post }: FFCBlogPostPageProps) {
             </div>
 
             {/* Share & CTA */}
-            <div className="mt-10 p-6 bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl">
+            <div className="mt-10 p-6 bg-gradient-to-r from-rose-50 to-pink-50 rounded-2xl">
               <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                 <div>
                   <h3 className="font-bold text-gray-900 mb-1">Ready to celebrate?</h3>
@@ -109,14 +109,14 @@ export default function FFCBlogPostPage({ post }: FFCBlogPostPageProps) {
                 </div>
                 <div className="flex gap-3">
                   <Button 
-                    className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700"
+                    className="bg-gradient-to-r from-rose-800 to-rose-700 hover:from-rose-900 hover:to-orange-700"
                     asChild
                   >
                     <Link href="/packages">View Packages</Link>
                   </Button>
                   <Button 
                     variant="outline"
-                    className="border-amber-600 text-amber-600 hover:bg-amber-50"
+                    className="border-rose-800 text-rose-800 hover:bg-rose-50"
                     asChild
                   >
                     <a href={`https://wa.me/${siteConfig.whatsapp}`} target="_blank" rel="noopener noreferrer">
@@ -149,7 +149,7 @@ export default function FFCBlogPostPage({ post }: FFCBlogPostPageProps) {
                         />
                       </div>
                       <CardContent className="p-4">
-                        <h3 className="font-semibold text-gray-900 line-clamp-2 group-hover:text-amber-600 transition-colors">
+                        <h3 className="font-semibold text-gray-900 line-clamp-2 group-hover:text-rose-800 transition-colors">
                           {relatedPost.title}
                         </h3>
                         <p className="text-sm text-gray-500 mt-2">{relatedPost.readTime} read</p>
@@ -168,7 +168,7 @@ export default function FFCBlogPostPage({ post }: FFCBlogPostPageProps) {
         <div className="container mx-auto px-4">
           <Link 
             href="/blog" 
-            className="inline-flex items-center gap-2 text-amber-600 hover:text-amber-700 font-medium"
+            className="inline-flex items-center gap-2 text-rose-800 hover:text-rose-900 font-medium"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to all articles

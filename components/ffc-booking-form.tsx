@@ -1,14 +1,16 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useForm } from 'react-hook-form';
+import { useRouter } from 'next/navigation';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { Calendar, Phone, User, Gift, MessageCircle, X, Send, Loader2, CheckCircle, MapPin, Clock } from 'lucide-react';
+import { Calendar, Phone, User, Gift, MessageCircle, X, Send, Loader2, CheckCircle, MapPin, Clock, Eye, ChevronDown, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { siteConfig, packages } from '@/lib/ffc-config';
@@ -25,6 +27,34 @@ const ffcBookingSchema = z.object({
 });
 
 type FFCBookingFormData = z.infer<typeof ffcBookingSchema>;
+
+// LocalStorage key for form persistence across pages
+const FORM_STORAGE_KEY = 'ffc-candlelight-booking-form-data';
+
+// Save form data to localStorage
+function saveFormData(data: Partial<FFCBookingFormData>) {
+  try {
+    localStorage.setItem(FORM_STORAGE_KEY, JSON.stringify({ ...data, _ts: Date.now() }));
+  } catch {}
+}
+
+// Load form data from localStorage (expires after 30 min)
+function loadFormData(): Partial<FFCBookingFormData> | null {
+  try {
+    const raw = localStorage.getItem(FORM_STORAGE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    // Expire after 30 minutes
+    if (parsed._ts && Date.now() - parsed._ts > 30 * 60 * 1000) {
+      localStorage.removeItem(FORM_STORAGE_KEY);
+      return null;
+    }
+    const { _ts, ...formData } = parsed;
+    return formData;
+  } catch {
+    return null;
+  }
+}
 
 // Moment/Occasion options
 const momentOptions = [
@@ -62,12 +92,15 @@ interface FFCBookingFormProps {
 export function FFCBookingForm({ pageTitle, variant = 'default', packageName, defaultPackageSlug, onClose }: FFCBookingFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [packagePopoverOpen, setPackagePopoverOpen] = useState(false);
+  const router = useRouter();
   
   const {
     register,
     handleSubmit,
     setValue,
     watch,
+    getValues,
     formState: { errors },
     reset,
   } = useForm<FFCBookingFormData>({
@@ -77,6 +110,42 @@ export function FFCBookingForm({ pageTitle, variant = 'default', packageName, de
       selectedPackage: defaultPackageSlug || ''
     }
   });
+
+  // Restore form data from localStorage on mount
+  useEffect(() => {
+    const saved = loadFormData();
+    if (saved) {
+      if (saved.name) setValue('name', saved.name);
+      if (saved.phone) setValue('phone', saved.phone);
+      if (saved.city) setValue('city', saved.city);
+      if (saved.occasionDate) setValue('occasionDate', saved.occasionDate);
+      if (saved.preferredTime) setValue('preferredTime', saved.preferredTime);
+      if (saved.occasion) setValue('occasion', saved.occasion);
+      if (saved.selectedPackage && !defaultPackageSlug) setValue('selectedPackage', saved.selectedPackage);
+    }
+  }, [setValue, defaultPackageSlug]);
+
+  // Auto-save form data whenever values change
+  const watchedValues = watch();
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      saveFormData(watchedValues);
+    }, 500);
+    return () => clearTimeout(timeout);
+  }, [watchedValues]);
+
+  // Navigate to package page with form data saved
+  const handleViewPackage = useCallback((slug: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    e.preventDefault();
+    // Save current form data before navigating
+    saveFormData(getValues());
+    setPackagePopoverOpen(false);
+    router.push(`/packages/${slug}`);
+  }, [getValues, router]);
+
+  const selectedPackageSlug = watch('selectedPackage');
+  const selectedPkg = selectedPackageSlug ? packages.find(p => p.slug === selectedPackageSlug) : null;
 
   // Generate WhatsApp message
   const generateWhatsAppMessage = (data: FFCBookingFormData): string => {
@@ -123,6 +192,7 @@ export function FFCBookingForm({ pageTitle, variant = 'default', packageName, de
     setTimeout(() => {
       setIsSuccess(false);
       reset();
+      localStorage.removeItem(FORM_STORAGE_KEY);
       if (onClose) onClose();
     }, 3000);
   };
@@ -133,8 +203,8 @@ export function FFCBookingForm({ pageTitle, variant = 'default', packageName, de
     return (
       <Card className={`${variant === 'modal' ? '' : 'shadow-lg'}`}>
         <CardContent className="py-12 text-center">
-          <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center bg-amber-100">
-            <CheckCircle className="h-8 w-8 text-amber-600" />
+          <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center bg-rose-100">
+            <CheckCircle className="h-8 w-8 text-rose-800" />
           </div>
           <h3 className="text-xl font-semibold mb-2">Booking Request Sent!</h3>
           <p className="text-muted-foreground">
@@ -148,7 +218,7 @@ export function FFCBookingForm({ pageTitle, variant = 'default', packageName, de
   return (
     <Card className={`${variant === 'modal' ? 'border-0 shadow-none' : 'shadow-lg'} ${variant === 'hero' ? 'bg-white/60 backdrop-blur-md border-white/20' : ''} overflow-hidden`}>
       {variant !== 'modal' && (
-        <div className={`${variant === 'hero' ? 'bg-gradient-to-r from-amber-600/95 to-orange-600/95' : 'bg-gradient-to-r from-amber-600 to-orange-600'} p-4 text-white`}>
+        <div className={`${variant === 'hero' ? 'bg-gradient-to-r from-rose-800/95 to-rose-700/95' : 'bg-gradient-to-r from-rose-800 to-rose-700'} p-4 text-white`}>
           <CardTitle className="text-xl flex items-center gap-2">
             <Gift className="h-5 w-5" />
             Reserve Your Moment
@@ -162,7 +232,7 @@ export function FFCBookingForm({ pageTitle, variant = 'default', packageName, de
       {variant === 'modal' && onClose && (
         <div className="flex justify-between items-center p-4 border-b">
           <div>
-            <CardTitle className="text-xl text-amber-600">Reserve Now</CardTitle>
+            <CardTitle className="text-xl text-rose-800">Reserve Now</CardTitle>
             <CardDescription>Get instant confirmation on WhatsApp</CardDescription>
           </div>
           <Button variant="ghost" size="icon" onClick={onClose}>
@@ -176,7 +246,7 @@ export function FFCBookingForm({ pageTitle, variant = 'default', packageName, de
           {/* Name Field */}
           <div className="space-y-2">
             <Label htmlFor="name" className="flex items-center gap-2">
-              <User className="h-4 w-4 text-amber-600" />
+              <User className="h-4 w-4 text-rose-800" />
               Your Name *
             </Label>
             <Input
@@ -193,7 +263,7 @@ export function FFCBookingForm({ pageTitle, variant = 'default', packageName, de
           {/* Phone Field */}
           <div className="space-y-2">
             <Label htmlFor="phone" className="flex items-center gap-2">
-              <Phone className="h-4 w-4 text-amber-600" />
+              <Phone className="h-4 w-4 text-rose-800" />
               Phone Number *
             </Label>
             <Input
@@ -212,7 +282,7 @@ export function FFCBookingForm({ pageTitle, variant = 'default', packageName, de
           {/* City Field */}
           <div className="space-y-2">
             <Label htmlFor="city" className="flex items-center gap-2">
-              <MapPin className="h-4 w-4 text-amber-600" />
+              <MapPin className="h-4 w-4 text-rose-800" />
               City *
             </Label>
             <Input
@@ -228,32 +298,63 @@ export function FFCBookingForm({ pageTitle, variant = 'default', packageName, de
 
           {/* Package & Moment Row */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {/* Package Selection Field */}
+            {/* Package Selection Field - Custom Popover with View Details */}
             <div className="space-y-2">
               <Label className="flex items-center gap-2 text-sm font-medium">
                 📦 Package
               </Label>
-              <Select 
-                defaultValue={defaultPackageSlug}
-                onValueChange={(value) => setValue('selectedPackage', value)}
-              >
-                <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Select package" />
-                </SelectTrigger>
-                <SelectContent>
-                  {packages.map((pkg) => (
-                    <SelectItem key={pkg.slug} value={pkg.slug}>
-                      {pkg.emoji} {pkg.name} - ₹{pkg.price.toLocaleString('en-IN')}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+              <Popover open={packagePopoverOpen} onOpenChange={setPackagePopoverOpen}>
+                <PopoverTrigger asChild>
+                  <button
+                    type="button"
+                    className="flex h-9 w-full items-center justify-between rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-xs ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                  >
+                    <span className={selectedPkg ? 'text-foreground truncate pr-2' : 'text-muted-foreground'}>
+                      {selectedPkg ? `${selectedPkg.emoji} ${selectedPkg.name}` : 'Select package'}
+                    </span>
+                    <ChevronDown className="h-4 w-4 opacity-50 shrink-0" />
+                  </button>
+                </PopoverTrigger>
+                <PopoverContent className="w-[min(90vw,400px)] sm:w-[var(--radix-popover-trigger-width)] p-0" align="start" sideOffset={4}>
+                  <div className="max-h-[280px] overflow-y-auto py-1">
+                    {packages.map((pkg) => (
+                      <div
+                        key={pkg.slug}
+                        className="flex items-center gap-1.5 px-2 py-2 hover:bg-accent cursor-pointer text-xs sm:text-sm group"
+                        onClick={() => {
+                          setValue('selectedPackage', pkg.slug);
+                          setPackagePopoverOpen(false);
+                        }}
+                      >
+                        {/* Check icon for selected */}
+                        <span className="w-4 shrink-0">
+                          {selectedPackageSlug === pkg.slug && <Check className="h-3.5 w-3.5 text-rose-800" />}
+                        </span>
+                        {/* Package info */}
+                        <span className="flex-1 min-w-0">
+                          <span className="block leading-tight">{pkg.emoji} {pkg.name}</span>
+                          <span className="text-[11px] text-muted-foreground">₹{pkg.price.toLocaleString('en-IN')}</span>
+                        </span>
+                        {/* View Details tag */}
+                        <button
+                          type="button"
+                          onClick={(e) => handleViewPackage(pkg.slug, e)}
+                          className="shrink-0 inline-flex items-center gap-0.5 px-1.5 py-0.5 text-[9px] sm:text-[10px] font-medium rounded-full bg-rose-100 text-rose-800 hover:bg-rose-700 hover:text-white transition-colors"
+                        >
+                          <Eye className="h-2.5 w-2.5 sm:h-3 sm:w-3" />
+                          View
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </PopoverContent>
+              </Popover>
             </div>
 
             {/* Occasion Field */}
             <div className="space-y-2">
               <Label className="flex items-center gap-2 text-sm font-medium">
-                <Gift className="h-4 w-4 text-amber-600" />
+                <Gift className="h-4 w-4 text-rose-800" />
                 Your Moment *
               </Label>
               <Select onValueChange={(value) => setValue('occasion', value)}>
@@ -279,7 +380,7 @@ export function FFCBookingForm({ pageTitle, variant = 'default', packageName, de
             {/* Date Field */}
             <div className="space-y-2">
               <Label htmlFor="occasionDate" className="flex items-center gap-2 text-sm font-medium">
-                <Calendar className="h-4 w-4 text-amber-600" />
+                <Calendar className="h-4 w-4 text-rose-800" />
                 Select Date *
               </Label>
               <Input
@@ -297,7 +398,7 @@ export function FFCBookingForm({ pageTitle, variant = 'default', packageName, de
             {/* Time Slot Field */}
             <div className="space-y-2">
               <Label className="flex items-center gap-2 text-sm font-medium">
-                <Clock className="h-4 w-4 text-amber-600" />
+                <Clock className="h-4 w-4 text-rose-800" />
                 Preferred Time *
               </Label>
               <Select onValueChange={(value) => setValue('preferredTime', value)}>
@@ -322,7 +423,7 @@ export function FFCBookingForm({ pageTitle, variant = 'default', packageName, de
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white py-5 text-base font-semibold mt-2"
+            className="w-full bg-gradient-to-r from-rose-800 to-rose-700 hover:from-rose-900 hover:to-orange-700 text-white py-5 text-base font-semibold mt-2"
           >
             {isSubmitting ? (
               <>
@@ -382,7 +483,7 @@ export function FFCBookNowButton({ pageTitle, packageName, packageSlug, classNam
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button className={`bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white ${className}`}>
+        <Button className={`bg-gradient-to-r from-rose-800 to-rose-700 hover:from-rose-900 hover:to-orange-700 text-white ${className}`}>
           <Gift className="h-5 w-5 mr-2" />
           Book Now
         </Button>

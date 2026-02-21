@@ -6259,7 +6259,53 @@ export function getAreaContent(slug: string): AreaUniqueContent | null {
     'ranoli-vadodara': ranoliContent,
   };
   
-  return contentMap[slug] || null;
+  // First check if we have main content for this slug
+  const mainContent = contentMap[slug];
+  if (mainContent) {
+    return mainContent;
+  }
+  
+  // If no main content, try to get candlelight area content and convert it
+  const candlelightContent = getCandlelightAreaContent(slug);
+  if (candlelightContent) {
+    // Convert AreaCandlelightContent to AreaUniqueContent format
+    return {
+      heroSubtitle: candlelightContent.heroSubtitle,
+      introduction: candlelightContent.introduction,
+      aboutArea: candlelightContent.aboutArea,
+      whyChooseUs: candlelightContent.whyChooseUs,
+      servicesDescription: `Experience the finest candlelight dinner near ${candlelightContent.areaName}, Vadodara. Our private rooftop venue offers couples from ${candlelightContent.areaName} an exclusive romantic dining experience with panoramic city views, hundreds of real candles, and personalized service.`,
+      locationAdvantage: candlelightContent.distanceInfo,
+      directionsFromArea: {
+        landmark: candlelightContent.localLandmarks[0] || candlelightContent.areaName,
+        route: candlelightContent.routeDescription,
+        duration: candlelightContent.distanceInfo,
+        tip: `Best time to drive from ${candlelightContent.areaName} is during evening hours for minimal traffic.`
+      },
+      faqs: candlelightContent.faqs,
+      testimonials: [{
+        name: candlelightContent.testimonial.name,
+        location: candlelightContent.areaName,
+        text: candlelightContent.testimonial.text,
+        occasion: candlelightContent.testimonial.occasion,
+        rating: 5
+      }],
+      closingText: candlelightContent.closingText,
+      callToAction: `Book your candlelight dinner from ${candlelightContent.areaName} today!`
+    } as AreaUniqueContent;
+  }
+  
+  return null;
+}
+
+// Import candlelight area content helper
+import { areaCandlelightContent } from './ffc-area-candlelight-content';
+
+// Helper function to get candlelight area content
+function getCandlelightAreaContent(slug: string) {
+  // Extract area name from slug (remove -vadodara suffix)
+  const areaKey = slug.replace('-vadodara', '');
+  return areaCandlelightContent[areaKey] || null;
 }
 
 // Export all area slugs that have unique content
