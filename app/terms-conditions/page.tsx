@@ -8,6 +8,9 @@ import { siteConfig } from '@/lib/ffc-config';
 export const metadata: Metadata = {
   title: 'Terms & Conditions | Friends Factory Cafe Vadodara',
   description: 'Terms and Conditions for Friends Factory Cafe - Booking policies, cancellation rules, and service agreements for candlelight dinners and romantic celebrations in Vadodara.',
+  alternates: {
+    canonical: '/terms-conditions',
+  },
 };
 
 export default function TermsConditionsPage() {
@@ -41,7 +44,7 @@ export default function TermsConditionsPage() {
 
             <h2 className="text-2xl font-bold mb-4 font-serif text-gray-900">1. Acceptance of Terms</h2>
             <p className="text-gray-600 mb-6">
-              By accessing our website friendsfactorycafe.com or booking our services for candlelight dinners, romantic celebrations, and events at Friends Factory Cafe, Vadodara, you agree to be bound by these Terms and Conditions. If you do not agree to these terms, please do not use our services.
+              By accessing our website candlelightdinnervadodara.com or booking our services for candlelight dinners, romantic celebrations, and events at Friends Factory Cafe, Vadodara, you agree to be bound by these Terms and Conditions. If you do not agree to these terms, please do not use our services.
             </p>
 
             <h2 className="text-2xl font-bold mb-4 font-serif text-gray-900">2. Our Services</h2>

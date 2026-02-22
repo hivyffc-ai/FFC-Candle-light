@@ -57,6 +57,9 @@ export const galleryItems: GalleryItem[] = [
   { type: 'image', src: '/packages/forever-us-loveframe-rooftop/images/7.png', alt: 'Fairy lights decoration Vadodara', title: 'Fairy Lights', featured: false },
 ];
 
+// Hero images for keyword and area pages
+export const birthdayHeroImages = galleryItems.filter(i => i.type === 'image').slice(0, 6).map(i => i.src);
+
 interface FFCGalleryProps {
   title?: string;
   subtitle?: string;

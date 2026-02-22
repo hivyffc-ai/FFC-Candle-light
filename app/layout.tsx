@@ -25,7 +25,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://friendsfactorycafe.com"),
+  metadataBase: new URL("https://candlelightdinnervadodara.com"),
   title: {
     default: "Candlelight Dinner Vadodara | Best Romantic Rooftop Dining | Friends Factory Cafe",
     template: "%s | Candlelight Dinner Vadodara | Friends Factory Cafe",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     "romantic venue vadodara",
     "surprise candlelight dinner vadodara"
   ],
-  authors: [{ name: "Friends Factory Cafe", url: "https://friendsfactorycafe.com" }],
+  authors: [{ name: "Friends Factory Cafe", url: "https://candlelightdinnervadodara.com" }],
   creator: "Friends Factory Cafe",
   publisher: "Friends Factory Cafe",
   formatDetection: {
@@ -66,15 +66,12 @@ export const metadata: Metadata = {
     address: true,
     telephone: true,
   },
-  alternates: {
-    canonical: "https://friendsfactorycafe.com",
-  },
   category: "Restaurant",
   classification: "Romantic Celebration Venue",
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://friendsfactorycafe.com",
+    url: "https://candlelightdinnervadodara.com",
     siteName: "Friends Factory Cafe",
     title: "Friends Factory Cafe Vadodara | Best Romantic Celebration Venue",
     description: "Best romantic celebration venue in Vadodara. Birthday surprises, candlelight dinners, anniversaries, proposals. 100% private rooftop & glass house experiences. Starting ₹6,900.",
@@ -135,20 +132,20 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "LocalBusiness",
-      "@id": "https://friendsfactorycafe.com/#business",
+      "@id": "https://candlelightdinnervadodara.com/#business",
       "name": "Friends Factory Cafe",
       "alternateName": "Friends Factory Cafe Vadodara",
       "description": "Best romantic celebration venue in Vadodara, Gujarat. Birthday surprises, candlelight dinners, anniversary celebrations, proposals, pre-wedding shoots. 100% private rooftop & glass house experiences.",
-      "url": "https://friendsfactorycafe.com",
+      "url": "https://candlelightdinnervadodara.com",
       "telephone": "+91-7487888730",
-      "email": "hello@friendsfactorycafe.com",
+      "email": "hello@candlelightdinnervadodara.com",
       "priceRange": "₹₹₹",
       "currenciesAccepted": "INR",
       "paymentAccepted": "Cash, Credit Card, UPI, GPay, PhonePe",
       "image": [
-        "https://friendsfactorycafe.com/images/gallery/romantic-rooftop-candlelight-dinner-vadodara-1.jpg",
-        "https://friendsfactorycafe.com/images/gallery/birthday-surprise-decoration-vadodara-1.jpg",
-        "https://friendsfactorycafe.com/images/gallery/glass-house-dinner-vadodara-1.jpg"
+        "https://candlelightdinnervadodara.com/images/gallery/romantic-rooftop-candlelight-dinner-vadodara-1.jpg",
+        "https://candlelightdinnervadodara.com/images/gallery/birthday-surprise-decoration-vadodara-1.jpg",
+        "https://candlelightdinnervadodara.com/images/gallery/glass-house-dinner-vadodara-1.jpg"
       ],
       "address": {
         "@type": "PostalAddress",
@@ -221,30 +218,30 @@ const jsonLd = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://friendsfactorycafe.com/#website",
-      "url": "https://friendsfactorycafe.com",
+      "@id": "https://candlelightdinnervadodara.com/#website",
+      "url": "https://candlelightdinnervadodara.com",
       "name": "Friends Factory Cafe",
       "description": "Best romantic celebration venue in Vadodara",
       "publisher": {
-        "@id": "https://friendsfactorycafe.com/#business"
+        "@id": "https://candlelightdinnervadodara.com/#business"
       },
       "potentialAction": {
         "@type": "SearchAction",
         "target": {
           "@type": "EntryPoint",
-          "urlTemplate": "https://friendsfactorycafe.com/services?q={search_term_string}"
+          "urlTemplate": "https://candlelightdinnervadodara.com/services?q={search_term_string}"
         },
         "query-input": "required name=search_term_string"
       }
     },
     {
       "@type": "Organization",
-      "@id": "https://friendsfactorycafe.com/#organization",
+      "@id": "https://candlelightdinnervadodara.com/#organization",
       "name": "Friends Factory Cafe",
-      "url": "https://friendsfactorycafe.com",
+      "url": "https://candlelightdinnervadodara.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://friendsfactorycafe.com/images/gallery/friends-factory-cafe-logo-1.png",
+        "url": "https://candlelightdinnervadodara.com/images/gallery/friends-factory-cafe-logo-1.png",
         "width": "512",
         "height": "512"
       },
@@ -258,25 +255,25 @@ const jsonLd = {
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://friendsfactorycafe.com/#breadcrumb",
+      "@id": "https://candlelightdinnervadodara.com/#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://friendsfactorycafe.com"
+          "item": "https://candlelightdinnervadodara.com"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Services",
-          "item": "https://friendsfactorycafe.com/services"
+          "item": "https://candlelightdinnervadodara.com/services"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Packages",
-          "item": "https://friendsfactorycafe.com/packages"
+          "item": "https://candlelightdinnervadodara.com/packages"
         }
       ]
     }

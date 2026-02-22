@@ -8,6 +8,9 @@ const keyword = getKeywordBySlug('candlelight-dinner', 'rooftop-candlelight-dinn
 export const metadata: Metadata = {
   title: keyword?.metaTitle || 'Friends Factory Cafe',
   description: keyword?.metaDescription || '',
+  alternates: {
+    canonical: '/rooftop-candlelight-dinner-vadodara',
+  },
 };
 
 export default function Page() {

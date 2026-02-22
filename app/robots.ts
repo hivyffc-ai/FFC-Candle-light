@@ -1,6 +1,6 @@
 /**
  * FRIENDS FACTORY CAFE - SEO OPTIMIZED ROBOTS.TXT
- * Domain: friendsfactorycafe.com
+ * Domain: candlelightdinnervadodara.com
  * 
  * Configuration for search engine crawlers:
  * - Allow all public pages
@@ -14,7 +14,7 @@
 import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = "https://friendsfactorycafe.com";
+  const baseUrl = "https://candlelightdinnervadodara.com";
   
   return {
     rules: [
@@ -28,16 +28,15 @@ export default function robots(): MetadataRoute.Robots {
           "/menu",
           "/packages",
           "/packages/*",
-          "/services",
           "/virtual-tour",
+          "/areas",
+          "/blog",
         ],
         disallow: [
           "/api/",
           "/admin/",
           "/private/",
-          "/_next/",
           "/leads",
-          "/*.json$",
         ],
       },
       {

@@ -88,12 +88,12 @@ export async function generateMetadata({
         `friends factory cafe ${serviceCategory.name.toLowerCase()}`
       ],
       alternates: {
-        canonical: `https://friendsfactorycafe.com/${serviceCategory.slug}`,
+        canonical: `https://candlelightdinnervadodara.com/${serviceCategory.slug}`,
       },
       openGraph: {
         title: serviceCategory.metaTitle,
         description: serviceCategory.metaDescription,
-        url: `https://friendsfactorycafe.com/${serviceCategory.slug}`,
+        url: `https://candlelightdinnervadodara.com/${serviceCategory.slug}`,
         type: "website",
         locale: "en_IN",
         siteName: "Friends Factory Cafe",
@@ -126,12 +126,12 @@ export async function generateMetadata({
         `private dining ${area.name}`
       ],
       alternates: {
-        canonical: `https://friendsfactorycafe.com/${area.slug}`,
+        canonical: `https://candlelightdinnervadodara.com/${area.slug}`,
       },
       openGraph: {
         title: areaTitle,
         description: `Premium romantic celebration services for couples in ${area.name}, Vadodara. Birthday surprises, candlelight dinners & more!`,
-        url: `https://friendsfactorycafe.com/${area.slug}`,
+        url: `https://candlelightdinnervadodara.com/${area.slug}`,
         type: "website",
         locale: "en_IN",
         siteName: "Friends Factory Cafe",
@@ -162,12 +162,12 @@ export async function generateMetadata({
         `${keywordData.service.name.toLowerCase()} near me vadodara`
       ],
       alternates: {
-        canonical: `https://friendsfactorycafe.com/${keywordData.keyword.slug}`,
+        canonical: `https://candlelightdinnervadodara.com/${keywordData.keyword.slug}`,
       },
       openGraph: {
         title: keywordTitle,
         description: keywordDescription,
-        url: `https://friendsfactorycafe.com/${keywordData.keyword.slug}`,
+        url: `https://candlelightdinnervadodara.com/${keywordData.keyword.slug}`,
         type: "website",
         locale: "en_IN",
         siteName: "Friends Factory Cafe",

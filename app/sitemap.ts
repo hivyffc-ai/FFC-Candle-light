@@ -1,6 +1,6 @@
 /**
  * FRIENDS FACTORY CAFE - SEO OPTIMIZED SITEMAP
- * Domain: friendsfactorycafe.com
+ * Domain: candlelightdinnervadodara.com
  * 
  * Pure Candlelight Dinner Focus - Updated January 2026
  * 
@@ -23,7 +23,7 @@ import {
 } from "@/lib/ffc-config";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://friendsfactorycafe.com";
+  const baseUrl = "https://candlelightdinnervadodara.com";
   const currentDate = new Date().toISOString();
   
   const entries: MetadataRoute.Sitemap = [];
@@ -46,6 +46,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: '/packages', priority: 0.9, freq: 'weekly' as const },
     { path: '/virtual-tour', priority: 0.7, freq: 'monthly' as const },
     { path: '/areas', priority: 0.8, freq: 'weekly' as const },
+    { path: '/blog', priority: 0.7, freq: 'weekly' as const },
   ];
   
   staticPages.forEach((page) => {

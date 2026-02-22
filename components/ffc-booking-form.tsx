@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/navigation';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { Calendar, Phone, User, Gift, MessageCircle, X, Send, Loader2, CheckCircle, MapPin, Clock, ChevronDown, Check, ChevronRight } from 'lucide-react';
+import { Calendar, Phone, User, Gift, MessageCircle, X, Send, Loader2, CheckCircle, MapPin, Clock, ChevronDown, Check, ChevronRight, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -17,7 +17,8 @@ import { siteConfig, packages } from '@/lib/ffc-config';
 
 // Form validation schema
 const ffcBookingSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters'),
+  yourName: z.string().min(2, 'Your name must be at least 2 characters'),
+  partnerName: z.string().min(2, "Partner's name must be at least 2 characters"),
   phone: z.string().min(10, 'Enter valid 10-digit phone number').max(10, 'Enter valid 10-digit phone number').regex(/^[6-9]\d{9}$/, 'Enter valid Indian mobile number'),
   city: z.string().min(1, 'Please enter your city'),
   occasionDate: z.string().min(1, 'Please select a date'),
@@ -29,7 +30,7 @@ const ffcBookingSchema = z.object({
 type FFCBookingFormData = z.infer<typeof ffcBookingSchema>;
 
 // LocalStorage key for form persistence across pages
-const FORM_STORAGE_KEY = 'ffc-candlelight-booking-form-data';
+const FORM_STORAGE_KEY = 'ffc-birthday-booking-form-data';
 
 // Save form data to localStorage
 function saveFormData(data: Partial<FFCBookingFormData>) {
@@ -115,7 +116,8 @@ export function FFCBookingForm({ pageTitle, variant = 'default', packageName, de
   useEffect(() => {
     const saved = loadFormData();
     if (saved) {
-      if (saved.name) setValue('name', saved.name);
+      if (saved.yourName) setValue('yourName', saved.yourName);
+      if (saved.partnerName) setValue('partnerName', saved.partnerName);
       if (saved.phone) setValue('phone', saved.phone);
       if (saved.city) setValue('city', saved.city);
       if (saved.occasionDate) setValue('occasionDate', saved.occasionDate);
@@ -154,7 +156,8 @@ export function FFCBookingForm({ pageTitle, variant = 'default', packageName, de
     const selectedPkg = data.selectedPackage ? packages.find(p => p.slug === data.selectedPackage) : null;
     
     let message = `*New Booking Inquiry - Friends Factory Cafe*\n\n`;
-    message += `*Name:* ${data.name}\n`;
+    message += `*Your Name:* ${data.yourName}\n`;
+    message += `*Partner's Name:* ${data.partnerName}\n`;
     message += `*Phone:* ${data.phone}\n`;
     message += `*City:* ${data.city}\n`;
     message += `*Date:* ${data.occasionDate}\n`;
@@ -203,8 +206,8 @@ export function FFCBookingForm({ pageTitle, variant = 'default', packageName, de
     return (
       <Card className={`${variant === 'modal' ? '' : 'shadow-lg'}`}>
         <CardContent className="py-12 text-center">
-          <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center bg-rose-100">
-            <CheckCircle className="h-8 w-8 text-rose-800" />
+          <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center bg-gradient-to-br from-pink-100 to-purple-100">
+            <CheckCircle className="h-8 w-8 text-pink-600" />
           </div>
           <h3 className="text-xl font-semibold mb-2">Booking Request Sent!</h3>
           <p className="text-muted-foreground">
@@ -218,7 +221,7 @@ export function FFCBookingForm({ pageTitle, variant = 'default', packageName, de
   return (
     <Card className={`${variant === 'modal' ? 'border-0 shadow-none' : 'shadow-lg'} ${variant === 'hero' ? 'bg-white/60 backdrop-blur-md border-white/20' : ''} overflow-hidden`}>
       {variant !== 'modal' && (
-        <div className={`${variant === 'hero' ? 'bg-gradient-to-r from-rose-800/95 to-rose-700/95' : 'bg-gradient-to-r from-rose-800 to-rose-700'} p-4 text-white`}>
+        <div className={`${variant === 'hero' ? 'bg-gradient-to-r from-pink-500/95 via-purple-500/95 to-blue-500/95' : 'bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500'} p-4 text-white`}>
           <CardTitle className="text-xl flex items-center gap-2">
             <Gift className="h-5 w-5" />
             Reserve Your Moment
@@ -232,7 +235,7 @@ export function FFCBookingForm({ pageTitle, variant = 'default', packageName, de
       {variant === 'modal' && onClose && (
         <div className="flex justify-between items-center p-4 border-b">
           <div>
-            <CardTitle className="text-xl text-rose-800">Reserve Now</CardTitle>
+            <CardTitle className="text-xl bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">Reserve Now</CardTitle>
             <CardDescription>Get instant confirmation on WhatsApp</CardDescription>
           </div>
           <Button variant="ghost" size="icon" onClick={onClose}>
@@ -243,27 +246,44 @@ export function FFCBookingForm({ pageTitle, variant = 'default', packageName, de
       
       <CardContent className="p-6">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-          {/* Name Field */}
+          {/* Your Name Field */}
           <div className="space-y-2">
-            <Label htmlFor="name" className="flex items-center gap-2">
-              <User className="h-4 w-4 text-rose-800" />
+            <Label htmlFor="yourName" className="flex items-center gap-2">
+              <User className="h-4 w-4 text-pink-600" />
               Your Name *
             </Label>
             <Input
-              id="name"
-              placeholder="Enter your full name"
-              {...register('name')}
-              className={errors.name ? 'border-red-500' : ''}
+              id="yourName"
+              placeholder="Enter your name"
+              {...register('yourName')}
+              className={errors.yourName ? 'border-red-500' : ''}
             />
-            {errors.name && (
-              <p className="text-red-500 text-sm">{errors.name.message}</p>
+            {errors.yourName && (
+              <p className="text-red-500 text-sm">{errors.yourName.message}</p>
+            )}
+          </div>
+
+          {/* Partner's Name Field */}
+          <div className="space-y-2">
+            <Label htmlFor="partnerName" className="flex items-center gap-2">
+              <Heart className="h-4 w-4 text-pink-600" />
+              Your Partner&apos;s Name *
+            </Label>
+            <Input
+              id="partnerName"
+              placeholder="Enter your partner's name"
+              {...register('partnerName')}
+              className={errors.partnerName ? 'border-red-500' : ''}
+            />
+            {errors.partnerName && (
+              <p className="text-red-500 text-sm">{errors.partnerName.message}</p>
             )}
           </div>
 
           {/* Phone Field */}
           <div className="space-y-2">
             <Label htmlFor="phone" className="flex items-center gap-2">
-              <Phone className="h-4 w-4 text-rose-800" />
+              <Phone className="h-4 w-4 text-pink-600" />
               Phone Number *
             </Label>
             <Input
@@ -282,7 +302,7 @@ export function FFCBookingForm({ pageTitle, variant = 'default', packageName, de
           {/* City Field */}
           <div className="space-y-2">
             <Label htmlFor="city" className="flex items-center gap-2">
-              <MapPin className="h-4 w-4 text-rose-800" />
+              <MapPin className="h-4 w-4 text-pink-600" />
               City *
             </Label>
             <Input
@@ -328,7 +348,7 @@ export function FFCBookingForm({ pageTitle, variant = 'default', packageName, de
                       >
                         {/* Check icon for selected */}
                         <span className="w-4 shrink-0">
-                          {selectedPackageSlug === pkg.slug && <Check className="h-3.5 w-3.5 text-rose-800" />}
+                          {selectedPackageSlug === pkg.slug && <Check className="h-3.5 w-3.5 text-pink-600" />}
                         </span>
                         {/* Package info */}
                         <span className="flex-1 min-w-0">
@@ -339,7 +359,7 @@ export function FFCBookingForm({ pageTitle, variant = 'default', packageName, de
                         <button
                           type="button"
                           onClick={(e) => handleViewPackage(pkg.slug, e)}
-                          className="ml-auto shrink-0 inline-flex items-center gap-1 px-2 py-1 text-[10px] sm:text-xs font-semibold rounded bg-rose-800 text-white hover:bg-rose-900 shadow-sm transition-all hover:shadow-md"
+                          className="ml-auto shrink-0 inline-flex items-center gap-1 px-2 py-1 text-[10px] sm:text-xs font-semibold rounded bg-pink-500 text-white hover:bg-pink-600 shadow-sm transition-all hover:shadow-md"
                         >
                           View
                           <ChevronRight className="h-3 w-3" />
@@ -354,7 +374,7 @@ export function FFCBookingForm({ pageTitle, variant = 'default', packageName, de
             {/* Occasion Field */}
             <div className="space-y-2">
               <Label className="flex items-center gap-2 text-sm font-medium">
-                <Gift className="h-4 w-4 text-rose-800" />
+                <Gift className="h-4 w-4 text-purple-600" />
                 Your Moment *
               </Label>
               <Select onValueChange={(value) => setValue('occasion', value)}>
@@ -380,7 +400,7 @@ export function FFCBookingForm({ pageTitle, variant = 'default', packageName, de
             {/* Date Field */}
             <div className="space-y-2">
               <Label htmlFor="occasionDate" className="flex items-center gap-2 text-sm font-medium">
-                <Calendar className="h-4 w-4 text-rose-800" />
+                <Calendar className="h-4 w-4 text-purple-600" />
                 Select Date *
               </Label>
               <Input
@@ -398,7 +418,7 @@ export function FFCBookingForm({ pageTitle, variant = 'default', packageName, de
             {/* Time Slot Field */}
             <div className="space-y-2">
               <Label className="flex items-center gap-2 text-sm font-medium">
-                <Clock className="h-4 w-4 text-rose-800" />
+                <Clock className="h-4 w-4 text-blue-600" />
                 Preferred Time *
               </Label>
               <Select onValueChange={(value) => setValue('preferredTime', value)}>
@@ -423,7 +443,7 @@ export function FFCBookingForm({ pageTitle, variant = 'default', packageName, de
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-gradient-to-r from-rose-800 to-rose-700 hover:from-rose-900 hover:to-orange-700 text-white py-5 text-base font-semibold mt-2"
+            className="w-full bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 text-white py-5 text-base font-semibold mt-2"
           >
             {isSubmitting ? (
               <>
@@ -483,7 +503,7 @@ export function FFCBookNowButton({ pageTitle, packageName, packageSlug, classNam
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button className={`bg-gradient-to-r from-rose-800 to-rose-700 hover:from-rose-900 hover:to-orange-700 text-white ${className}`}>
+        <Button className={`bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 text-white ${className}`}>
           <Gift className="h-5 w-5 mr-2" />
           Book Now
         </Button>

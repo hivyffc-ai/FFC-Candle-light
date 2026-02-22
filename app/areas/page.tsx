@@ -17,7 +17,10 @@ export const metadata: Metadata = {
     'anniversary celebration gotri',
     'proposal setup akota',
     'friends factory cafe locations'
-  ]
+  ],
+  alternates: {
+    canonical: '/areas',
+  },
 };
 
 export default function AreasPage() {
