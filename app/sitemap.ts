@@ -1,110 +1,123 @@
-/**
- * FRIENDS FACTORY CAFE - SEO OPTIMIZED SITEMAP
- * Domain: candlelightdinnervadodara.com
- * 
- * Pure Candlelight Dinner Focus - Updated January 2026
- * 
- * Total Pages: 80+ including:
- * - 1 Homepage (priority 1.0)
- * - 6 Static pages (priority 0.8)
- * - 1 Candlelight Dinner category page (priority 0.9)
- * - 8 Package detail pages (priority 0.85)
- * - 34 Candlelight Dinner keyword pages (priority 0.85) - Main SEO pages
- * - 40 Vadodara Area pages (priority 0.8)
- * 
- * Last Updated: January 2026
- */
-
 import { MetadataRoute } from "next";
-import { 
-  serviceCategories, 
-  vadodaraAreas, 
-  packages
-} from "@/lib/ffc-config";
+import fs from "fs";
+import path from "path";
+import { SEO_CONFIG } from "@/lib/seo-config";
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://candlelightdinnervadodara.com";
-  const currentDate = new Date().toISOString();
-  
-  const entries: MetadataRoute.Sitemap = [];
-  
-  // ==================== HOME PAGE ====================
-  // Highest priority - main landing page
-  entries.push({
-    url: baseUrl,
-    lastModified: currentDate,
-    changeFrequency: "daily",
-    priority: 1.0,
-  });
-  
-  // ==================== STATIC PAGES ====================
-  // Core pages with regular updates
-  const staticPages = [
-    { path: '/about', priority: 0.8, freq: 'monthly' as const },
-    { path: '/contact', priority: 0.9, freq: 'monthly' as const },
-    { path: '/menu', priority: 0.8, freq: 'weekly' as const },
-    { path: '/packages', priority: 0.9, freq: 'weekly' as const },
-    { path: '/virtual-tour', priority: 0.7, freq: 'monthly' as const },
-    { path: '/areas', priority: 0.8, freq: 'weekly' as const },
-    { path: '/blog', priority: 0.7, freq: 'weekly' as const },
+function getAllRoutes(): string[] {
+  const appDir = path.join(process.cwd(), "app");
+  if (!fs.existsSync(appDir)) return ["/"];
+
+  const routes: string[] = ["/"];
+  const ignoreDirs = new Set([
+    "api",
+    "_components",
+    "_lib",
+    "admin",
+    "node_modules",
+  ]);
+  const ignoreFiles = new Set([
+    "layout.tsx",
+    "layout.js",
+    "loading.tsx",
+    "loading.js",
+    "error.tsx",
+    "error.js",
+    "not-found.tsx",
+    "not-found.js",
+    "globals.css",
+    "global.css",
+    "sitemap.ts",
+    "sitemap.xml",
+    "robots.ts",
+    "robots.txt",
+    "manifest.ts",
+    "manifest.json",
+    "opengraph-image.tsx",
+    "opengraph-image.png",
+    "apple-icon.svg",
+    "icon.svg",
+    "favicon.ico",
+  ]);
+
+  function scanDir(dir: string, basePath: string) {
+    let entries: fs.Dirent[];
+    try {
+      entries = fs.readdirSync(dir, { withFileTypes: true });
+    } catch {
+      return;
+    }
+
+    for (const entry of entries) {
+      if (entry.name.startsWith(".") || entry.name.startsWith("_")) continue;
+
+      if (entry.isDirectory()) {
+        if (ignoreDirs.has(entry.name)) continue;
+
+        const dirPath = path.join(dir, entry.name);
+        const routePath = `${basePath}/${entry.name}`;
+
+        // Check if this directory has a page file
+        const hasPage =
+          fs.existsSync(path.join(dirPath, "page.tsx")) ||
+          fs.existsSync(path.join(dirPath, "page.js")) ||
+          fs.existsSync(path.join(dirPath, "page.jsx")) ||
+          fs.existsSync(path.join(dirPath, "page.mdx"));
+
+        if (hasPage) {
+          // Skip dynamic route folders like [slug], [city] etc.
+          if (!entry.name.startsWith("[")) {
+            routes.push(routePath);
+          }
+        }
+
+        // Continue scanning subdirectories
+        scanDir(dirPath, routePath);
+      }
+    }
+  }
+
+  scanDir(appDir, "");
+  return [...new Set(routes)].sort();
+}
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = SEO_CONFIG.siteUrl;
+  const allRoutes = getAllRoutes();
+  const lastModified = new Date();
+
+  // Define priority tiers
+  const highPriorityPaths = new Set(["/"]);
+  const mediumPriorityKeywords = [
+    "about",
+    "contact",
+    "services",
+    "service",
   ];
-  
-  staticPages.forEach((page) => {
-    entries.push({
-      url: `${baseUrl}${page.path}`,
-      lastModified: currentDate,
-      changeFrequency: page.freq,
-      priority: page.priority,
-    });
+
+  return allRoutes.map((route) => {
+    let priority = 0.7;
+    let changeFrequency: "daily" | "weekly" | "monthly" = "weekly";
+
+    if (highPriorityPaths.has(route)) {
+      priority = 1.0;
+      changeFrequency = "daily";
+    } else if (
+      mediumPriorityKeywords.some((kw) =>
+        route.toLowerCase().includes(kw)
+      )
+    ) {
+      priority = 0.9;
+      changeFrequency = "weekly";
+    } else if (route.split("/").length <= 2) {
+      priority = 0.8;
+      changeFrequency = "weekly";
+    }
+
+    return {
+      url: `${baseUrl}${route}`,
+      lastModified,
+      changeFrequency,
+      priority,
+    };
   });
-  
-  // ==================== CANDLELIGHT DINNER CATEGORY PAGE ====================
-  // Main candlelight dinner landing page
-  serviceCategories.forEach((service) => {
-    entries.push({
-      url: `${baseUrl}/${service.slug}`,
-      lastModified: currentDate,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    });
-  });
-  
-  // ==================== PACKAGE DETAIL PAGES ====================
-  // 8 setup packages - high priority for conversions
-  packages.forEach((pkg) => {
-    entries.push({
-      url: `${baseUrl}/packages/${pkg.slug}`,
-      lastModified: currentDate,
-      changeFrequency: "weekly",
-      priority: 0.85,
-    });
-  });
-  
-  // ==================== CANDLELIGHT DINNER KEYWORD PAGES (MAIN SEO) ====================
-  // 34 candlelight dinner keyword pages
-  // These are the main SEO landing pages targeting specific search queries
-  // URL Structure: /{keyword}
-  serviceCategories.forEach((service) => {
-    service.keywords.forEach((keyword) => {
-      entries.push({
-        url: `${baseUrl}/${keyword.slug}`,
-        lastModified: currentDate,
-        changeFrequency: "weekly",
-        priority: 0.85,
-      });
-    });
-  });
-  
-  // ==================== AREA PAGES ====================
-  // 40 Vadodara area pages for local SEO
-  vadodaraAreas.forEach((area) => {
-    entries.push({
-      url: `${baseUrl}/${area.slug}`,
-      lastModified: currentDate,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    });
-  });
-  
-  return entries;
 }
