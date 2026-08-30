@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://candlelightdinnervadodara.com/sitemap-index.xml
