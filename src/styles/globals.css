@@ -1,9 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "@fontsource/playfair-display/400.css";
-@import "@fontsource/playfair-display/500.css";
-@import "@fontsource/playfair-display/600.css";
-@import "@fontsource/playfair-display/700.css";
 @import "@fontsource/inter/400.css";
 @import "@fontsource/inter/500.css";
 @import "@fontsource/inter/600.css";
@@ -109,6 +106,30 @@
 @theme inline {
   --font-sans: "Inter", "sans-serif";
   --font-serif: "Playfair Display", "serif";
+
+  /* candlelight palette reskin */
+  --color-amber-50: #FDF7F1;
+  --color-amber-100: #FBECDF;
+  --color-amber-200: #F7D7BB;
+  --color-amber-300: #F1BC8E;
+  --color-amber-400: #EB9E5C;
+  --color-amber-500: #E5842E;
+  --color-amber-600: #CC6D19;
+  --color-amber-700: #A85915;
+  --color-amber-800: #884911;
+  --color-amber-900: #6D3A0D;
+  --color-amber-950: #442408;
+  --color-orange-50: #FCF4F2;
+  --color-orange-100: #F9E6E2;
+  --color-orange-200: #F2CAC0;
+  --color-orange-300: #E9A696;
+  --color-orange-400: #DF7F68;
+  --color-orange-500: #D65C3D;
+  --color-orange-600: #BD4628;
+  --color-orange-700: #9C3A21;
+  --color-orange-800: #7E2F1B;
+  --color-orange-900: #652515;
+  --color-orange-950: #3F170D;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
